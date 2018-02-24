@@ -23,6 +23,16 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SerialFlash}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/src}&quot;"/>
 								</option>
 								<inputType id="io.sloeber.compiler.cpp.sketch.input.1451570780" name="CPP source files" superClass="io.sloeber.compiler.cpp.sketch.input"/>
 							</tool>
@@ -32,6 +42,16 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SerialFlash}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/src}&quot;"/>
 								</option>
 								<inputType id="io.sloeber.compiler.c.sketch.input.557753499" name="C Source Files" superClass="io.sloeber.compiler.c.sketch.input"/>
 							</tool>
@@ -41,6 +61,16 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SerialFlash}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/src}&quot;"/>
 								</option>
 								<inputType id="io.sloeber.compiler.S.sketch.input.1589591145" name="Assembly source files" superClass="io.sloeber.compiler.S.sketch.input"/>
 							</tool>
@@ -57,12 +87,22 @@
 								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library}&quot;"/>
 								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/src}&quot;"/>
 								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/ann_arbor_percussion_synthesizer_library/include}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Audio/utility}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SD/utility}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SerialFlash}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/SPI}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/libraries/Wire/utility}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/include}&quot;"/>
+								<listOptionValue builtIn="false" value="&quot;${workspace_loc:/teensy_ann_arbor_percussion_synthesizer_runner/src}&quot;"/>
 							</option>
 							<inputType id="io.sloeber.compiler.cpp.sketch.input.1522400592" name="CPP source files" superClass="io.sloeber.compiler.cpp.sketch.input"/>
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries**/._*" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="libraries/SerialFlash/util|libraries/SerialFlash/doc|libraries/Audio/gui|libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries**/._*" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
