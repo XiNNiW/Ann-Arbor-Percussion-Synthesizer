@@ -11,8 +11,7 @@
 
 class KnobInterface {
 public:
-	KnobInterface();
-	virtual ~KnobInterface();
+	virtual ~KnobInterface(){};
 	virtual int getValue()=0;
 };
 

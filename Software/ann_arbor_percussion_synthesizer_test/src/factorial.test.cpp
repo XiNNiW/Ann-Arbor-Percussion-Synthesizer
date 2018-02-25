@@ -7,9 +7,9 @@ TEST(IntegerFunctionTest, negative) {
         EXPECT_GT(factorial(-10), 0);
 }
 
-TEST(IntegerFunctionTest, DISABLED_zero) {
-         EXPECT_EQ(1, factorial(0));
-}
+//TEST(IntegerFunctionTest, DISABLED_zero) {
+//         EXPECT_EQ(1, factorial(0));
+//}
 
 TEST(IntegerFunctionTest, postive) {
          EXPECT_EQ(1, factorial(1));

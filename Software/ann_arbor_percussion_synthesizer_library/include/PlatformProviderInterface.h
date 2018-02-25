@@ -12,8 +12,7 @@
 
 class PlatformProviderInterface {
 public:
-	PlatformProviderInterface();
-	virtual ~PlatformProviderInterface();
+	virtual ~PlatformProviderInterface(){};
 	virtual KnobInterface* createKnob(int knobNumber, int minValue, int maxValue)=0;
 };
 

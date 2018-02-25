@@ -14,6 +14,7 @@ void loop()
 	Serial.print("the next factorial...");
 	Serial.println(String(factorial(counter)));
 	counter = (counter+1)%4;
+//	A7
 	delay(1000);
 //Add your repeated code here
 }
