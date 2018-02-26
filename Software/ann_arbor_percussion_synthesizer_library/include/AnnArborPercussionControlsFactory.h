@@ -10,9 +10,12 @@
 
 #include <KnobInterface.h>
 #include <PlatformProviderInterface.h>
+#include <AnnArborPercussionControlsFactoryInterface.h>
 
-class AnnArborPercussionControlsFactory {
+class AnnArborPercussionControlsFactory : public AnnArborPercussionControlsFactoryInterface{
 public:
+	AnnArborPercussionControlsFactory();
+	virtual ~AnnArborPercussionControlsFactory();
 	KnobInterface* createLengthKnob(PlatformProviderInterface* platformProvider);
 	KnobInterface* createMotionKnob(PlatformProviderInterface* platformProvider);
 	KnobInterface* createFrequencyKnob(PlatformProviderInterface* platformProvider);

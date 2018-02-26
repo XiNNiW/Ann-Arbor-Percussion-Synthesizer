@@ -7,29 +7,21 @@
 
 #include <AnnArborPercussionSynthesizer.h>
 
-AnnArborPercussionSynthesizer::AnnArborPercussionSynthesizer(PlatformProviderInterface* platformProvider) {
+AnnArborPercussionSynthesizer::AnnArborPercussionSynthesizer(PlatformProviderInterface* platformProvider, AnnArborPercussionControlsFactoryInterface* controlsFactory) {
 
-	int pinForDrumWidthKnob = 14;
-	int minValueForDrumWidthKnob = 0;
-	int maxValueForDrumWidthKnob = 2000;
-	this->drumWidthKnob = platformProvider->createKnob(pinForDrumWidthKnob,minValueForDrumWidthKnob,maxValueForDrumWidthKnob);
+	this->drumLengthKnob = controlsFactory->createLengthKnob(platformProvider);
+	this->drumMotionKnob = controlsFactory->createMotionKnob(platformProvider);
+	this->drumFrequencyKnob = controlsFactory->createFrequencyKnob(platformProvider);
+	this->drumModKnob = controlsFactory->createModKnob(platformProvider);
+	this->drumTeethKnob = controlsFactory->createTeethKnob(platformProvider);
 
-	int pinForDrumMotionKnob = 21;
-	int minValueForDrumMotionKnob = 1;
-	int maxValueForDrumMotionKnob = 2000;
-	this->drumMotionKnob = platformProvider->createKnob(pinForDrumMotionKnob,minValueForDrumMotionKnob,maxValueForDrumMotionKnob);
-
-	int pinForDrumFrequencyKnob = 15;
-	int minValueForDrumFrequencyKnob = 20;
-	int maxValueForDrumFrequencyKnob = 2500;
-	this->drumFrequencyKnob = platformProvider->createKnob(pinForDrumFrequencyKnob,minValueForDrumFrequencyKnob,maxValueForDrumFrequencyKnob);
 }
 
 AnnArborPercussionSynthesizer::~AnnArborPercussionSynthesizer() {}
 
 
-int AnnArborPercussionSynthesizer::getDrumWidth(){
-	return this->drumWidthKnob->getValue();
+int AnnArborPercussionSynthesizer::getDrumLength(){
+	return this->drumLengthKnob->getValue();
 }
 
 int AnnArborPercussionSynthesizer::getDrumMotion(){
@@ -38,4 +30,12 @@ int AnnArborPercussionSynthesizer::getDrumMotion(){
 
 int AnnArborPercussionSynthesizer::getDrumFrequency(){
 	return this->drumFrequencyKnob->getValue();
+}
+
+int AnnArborPercussionSynthesizer::getDrumMod(){
+	return this->drumModKnob->getValue();
+}
+
+int AnnArborPercussionSynthesizer::getDrumTeeth(){
+	return this->drumTeethKnob->getValue();
 }

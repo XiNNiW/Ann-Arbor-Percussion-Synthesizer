@@ -9,68 +9,50 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include <AnnArborPercussionSynthesizer.h>
+#include "MockAnnArborPercussionControlsFactory.h"
 #include "MockPlatformProvider.h"
 #include "MockKnob.h"
 
 TEST(AnnArborPercussionSynthesizerTest, should_get_synth_parameters_from_knobs) {
+
 	MockPlatformProvider mockProvider;
+	MockAnnArborPercussionControlsFactory mockControlsFactory;
 
-	MockKnob mockWidthKnob;
+	MockKnob mockLengthKnob;
 	MockKnob mockMotionKnob;
-	MockKnob mockFreqKnob;
+	MockKnob mockFrequencyKnob;
+	MockKnob mockModKnob;
+	MockKnob mockTeethKnob;
 
-	int pinForDrumWidthKnob = 14;
-	int minValueForDrumWidthKnob = 0;
-	int maxValueForDrumWidthKnob = 2000;
-
-	EXPECT_CALL(mockProvider,
-			createKnob(
-					pinForDrumWidthKnob,
-					minValueForDrumWidthKnob,
-					maxValueForDrumWidthKnob
-			)
-	).Times(1).WillOnce(testing::Return(&mockWidthKnob));
-
-	int pinForDrumMotionKnob = 21;
-	int minValueForDrumMotionKnob = 1;
-	int maxValueForDrumMotionKnob = 2000;
-
-	EXPECT_CALL(mockProvider,
-			createKnob(
-					pinForDrumMotionKnob,
-					minValueForDrumMotionKnob,
-					maxValueForDrumMotionKnob
-			)
-	).Times(1).WillOnce(testing::Return(&mockMotionKnob));
-
-	int pinForDrumFrequencyKnob = 15;
-	int minValueForDrumFrequencyKnob = 20;
-	int maxValueForDrumFrequencyKnob = 2500;
-
-	EXPECT_CALL(mockProvider,
-			createKnob(
-					pinForDrumFrequencyKnob,
-					minValueForDrumFrequencyKnob,
-					maxValueForDrumFrequencyKnob
-			)
-	).Times(1).WillOnce(testing::Return(&mockFreqKnob));
-
+	EXPECT_CALL(mockControlsFactory,createLengthKnob(&mockProvider)).Times(1).WillOnce(testing::Return(&mockLengthKnob));
+	EXPECT_CALL(mockControlsFactory,createFrequencyKnob(&mockProvider)).Times(1).WillOnce(testing::Return(&mockFrequencyKnob));
+	EXPECT_CALL(mockControlsFactory,createMotionKnob(&mockProvider)).Times(1).WillOnce(testing::Return(&mockMotionKnob));
+	EXPECT_CALL(mockControlsFactory,createModKnob(&mockProvider)).Times(1).WillOnce(testing::Return(&mockModKnob));
+	EXPECT_CALL(mockControlsFactory,createTeethKnob(&mockProvider)).Times(1).WillOnce(testing::Return(&mockTeethKnob));
 
 	AnnArborPercussionSynthesizer* a2Synth =
-			new AnnArborPercussionSynthesizer(&mockProvider);
+			new AnnArborPercussionSynthesizer(&mockProvider,&mockControlsFactory);
 
 	int expectedDrumWidth = 5;
-	EXPECT_CALL(mockWidthKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumWidth));
+	EXPECT_CALL(mockLengthKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumWidth));
 
 	int expectedDrumMotion = 7;
 	EXPECT_CALL(mockMotionKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumMotion));
 
 	int expectedDrumFrequency = 203;
-		EXPECT_CALL(mockFreqKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumFrequency));
+	EXPECT_CALL(mockFrequencyKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumFrequency));
 
-	EXPECT_EQ(a2Synth->getDrumWidth(), expectedDrumWidth);
+	int expectedDrumMod = 43;
+	EXPECT_CALL(mockModKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumMod));
+
+	int expectedDrumTeeth = 23;
+	EXPECT_CALL(mockTeethKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumTeeth));
+
+	EXPECT_EQ(a2Synth->getDrumLength(), expectedDrumWidth);
 	EXPECT_EQ(a2Synth->getDrumMotion(), expectedDrumMotion);
 	EXPECT_EQ(a2Synth->getDrumFrequency(), expectedDrumFrequency);
+	EXPECT_EQ(a2Synth->getDrumMod(), expectedDrumMod);
+	EXPECT_EQ(a2Synth->getDrumTeeth(), expectedDrumTeeth);
 
 
 }
