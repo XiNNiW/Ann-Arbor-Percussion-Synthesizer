@@ -13,6 +13,8 @@
 #include "MockPlatformProvider.h"
 #include "MockKnob.h"
 
+using AnnArborPercussion::AnnArborPercussionSynthesizer;
+
 TEST(AnnArborPercussionSynthesizerTest, should_get_synth_parameters_from_knobs) {
 
 	MockPlatformProvider mockProvider;

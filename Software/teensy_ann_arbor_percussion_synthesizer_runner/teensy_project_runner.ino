@@ -1,20 +1,28 @@
-#include "factorial.h"
-//The setup function is called once at startup of the sketch
-int counter;
+#include <Audio.h>
+#include <AnnArborPercussionSynthesizer.h>
+#include <AnnArborPercussionControlsFactory.h>
+#include <TeensyPlatformProvider.h>
+
+using AnnArborPercussion::AnnArborPercussionControlsFactory;
+using AnnArborPercussion::AnnArborPercussionSynthesizer;
+
+AnnArborPercussionSynthesizer* annArborPercussionSynthesizer;
+
 void setup()
 {
-// Add your initialization code here
-	Serial.begin(9600);
-	Serial.println("Setup");
+	TeensyPlatformProvider* platformProvider = new TeensyPlatformProvider();
+	AnnArborPercussionControlsFactory* controlsFactory = new AnnArborPercussionControlsFactory();
+	annArborPercussionSynthesizer = new AnnArborPercussionSynthesizer(platformProvider,controlsFactory);
 }
 
-// The loop function is called in an endless loop
 void loop()
 {
-	Serial.print("the next factorial...");
-	Serial.println(String(factorial(counter)));
-	counter = (counter+1)%4;
-//	A1
+	Serial.print("A2 synth params are...");
+	Serial.println(String(annArborPercussionSynthesizer->getDrumLength()));
+	Serial.println(String(annArborPercussionSynthesizer->getDrumFrequency()));
+	Serial.println(String(annArborPercussionSynthesizer->getDrumMod()));
+	Serial.println(String(annArborPercussionSynthesizer->getDrumMotion()));
+	Serial.println(String(annArborPercussionSynthesizer->getDrumTeeth()));
+
 	delay(1000);
-//Add your repeated code here
 }

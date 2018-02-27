@@ -13,6 +13,8 @@
 #include <PlatformProviderInterface.h>
 #include "gmock/gmock.h"
 
+using AnnArborPercussion::AnnArborPercussionControlsFactoryInterface;
+
 class MockAnnArborPercussionControlsFactory : public AnnArborPercussionControlsFactoryInterface {
 public:
 	MOCK_METHOD1(createLengthKnob,KnobInterface*(PlatformProviderInterface* platformProvider));

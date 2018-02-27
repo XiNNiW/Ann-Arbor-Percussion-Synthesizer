@@ -11,6 +11,8 @@
 #include "MockPlatformProvider.h"
 #include "MockKnob.h"
 
+using AnnArborPercussion::AnnArborPercussionControlsFactory;
+
 TEST(AnnArborPercussionControlsFactoryTest, create_length_knob_passes_the_right_parameters) {
 	MockPlatformProvider mockProvider;
 
