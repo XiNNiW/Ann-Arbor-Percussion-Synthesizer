@@ -8,9 +8,11 @@
 #ifndef INCLUDE_AUDIOSYNTHWAVEFORMADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOSYNTHWAVEFORMADAPTERINTERFACE_H_
 
+#include <AudioStreamAdapterInterface.h>
+
 namespace AnnArborPercussion {
 
-class AudioSynthWaveformAdapterInterface {
+class AudioSynthWaveformAdapterInterface : public AudioStreamAdapterInterface {
 public:
 	virtual ~AudioSynthWaveformAdapterInterface(){};
 	virtual void frequency(float t_freq)=0;

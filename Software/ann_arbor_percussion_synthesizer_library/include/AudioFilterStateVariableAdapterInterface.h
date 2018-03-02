@@ -8,11 +8,13 @@
 #ifndef INCLUDE_AUDIOFILTERSTATEVARIABLEADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOFILTERSTATEVARIABLEADAPTERINTERFACE_H_
 
+#include <AudioStreamAdapterInterface.h>
+
 namespace AnnArborPercussion {
 
-class AudioFilterStateVariableAdapterInterface {
+class AudioFilterStateVariableAdapterInterface : public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioFilterStateVariableAdapterInterface();
+	virtual ~AudioFilterStateVariableAdapterInterface(){};
 	virtual void frequency(float freq)=0;
 	virtual void resonance(float q)=0;
 	virtual void octaveControl(float n)=0;

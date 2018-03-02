@@ -7,10 +7,11 @@
 
 #ifndef AUDIOOUTPUTI2SADAPTERINTERFACE_H_
 #define AUDIOOUTPUTI2SADAPTERINTERFACE_H_
+#include <AudioStreamAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-class AudioOutputI2SAdapterInterface {
+class AudioOutputI2SAdapterInterface :  public AudioStreamAdapterInterface{
 public:
 	virtual ~AudioOutputI2SAdapterInterface(){};
 	virtual void update(void)=0;

@@ -7,10 +7,10 @@
 
 #ifndef INCLUDE_AUDIOSYNTHWAVEFORMSINEMODULATEDADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOSYNTHWAVEFORMSINEMODULATEDADAPTERINTERFACE_H_
-
+#include <AudioStreamAdapterInterface.h>
 namespace AnnArborPercussion {
 
-class AudioSynthWaveformSineModulatedAdapterInterface {
+class AudioSynthWaveformSineModulatedAdapterInterface : public AudioStreamAdapterInterface {
 public:
 	virtual ~AudioSynthWaveformSineModulatedAdapterInterface(){};
 	virtual void frequency(float freq)=0;

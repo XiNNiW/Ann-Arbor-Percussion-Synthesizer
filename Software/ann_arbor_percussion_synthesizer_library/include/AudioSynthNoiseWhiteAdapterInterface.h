@@ -8,9 +8,11 @@
 #ifndef INCLUDE_AUDIOSYNTHNOISEWHITEADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOSYNTHNOISEWHITEADAPTERINTERFACE_H_
 
+#include <AudioStreamAdapterInterface.h>
+
 namespace AnnArborPercussion {
 
-class AudioSynthNoiseWhiteAdapterInterface {
+class AudioSynthNoiseWhiteAdapterInterface :  public AudioStreamAdapterInterface {
 public:
 	virtual ~AudioSynthNoiseWhiteAdapterInterface(){};
 	virtual void amplitude(float n)=0;

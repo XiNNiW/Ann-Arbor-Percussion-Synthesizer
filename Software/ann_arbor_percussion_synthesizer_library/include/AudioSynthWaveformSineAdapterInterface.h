@@ -11,7 +11,7 @@
 #include <AudioStreamAdapterInterface.h>
 namespace AnnArborPercussion {
 
-class AudioSynthWaveformSineAdapterInterface {
+class AudioSynthWaveformSineAdapterInterface : public AudioStreamAdapterInterface {
 public:
 	virtual ~AudioSynthWaveformSineAdapterInterface(){};
 	virtual void frequency(float freq)=0;

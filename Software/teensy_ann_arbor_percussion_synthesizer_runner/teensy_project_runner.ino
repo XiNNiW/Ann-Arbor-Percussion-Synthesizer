@@ -7,7 +7,7 @@ using AnnArborPercussion::AnnArborPercussionControlsFactory;
 using AnnArborPercussion::AnnArborPercussionSynthesizer;
 
 AnnArborPercussionSynthesizer* annArborPercussionSynthesizer;
-AudioSynthWaveformSine stream;
+AudioOutputI2S stream;
 
 void setup()
 {

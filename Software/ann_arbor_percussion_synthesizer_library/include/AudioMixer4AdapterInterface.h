@@ -8,9 +8,11 @@
 #ifndef INCLUDE_AUDIOMIXER4ADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOMIXER4ADAPTERINTERFACE_H_
 
+#include <AudioStreamAdapterInterface.h>
+
 namespace AnnArborPercussion {
 
-class AudioMixer4AdapterInterface {
+class AudioMixer4AdapterInterface : public AudioStreamAdapterInterface {
 public:
 	virtual ~AudioMixer4AdapterInterface(){};
 	virtual void update(void)=0;

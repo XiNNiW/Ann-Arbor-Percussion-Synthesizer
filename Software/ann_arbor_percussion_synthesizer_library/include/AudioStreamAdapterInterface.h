@@ -1,7 +1,7 @@
 /*
  * AudioStreamAdapterInterface.h
  *
- *  Created on: Feb 27, 2018
+ *  Created on: Mar 2, 2018
  *      Author: xinniw
  */
 
@@ -17,7 +17,7 @@ public:
 	virtual int processorUsageMax(void)=0;
 	virtual void processorUsageMaxReset(void)=0;
 	virtual bool isActive(void)=0;
-
+	virtual void update(void)=0;
 };
 
 } /* namespace AnnArborPercussion */

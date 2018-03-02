@@ -8,9 +8,11 @@
 #ifndef INCLUDE_AUDIOSYNTHSIMPLEDRUMADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOSYNTHSIMPLEDRUMADAPTERINTERFACE_H_
 
+#include <AudioStreamAdapterInterface.h>
+
 namespace AnnArborPercussion {
 
-class AudioSynthSimpleDrumAdapterInterface {
+class AudioSynthSimpleDrumAdapterInterface : public AudioStreamAdapterInterface {
 public:
 	virtual ~AudioSynthSimpleDrumAdapterInterface(){};
 	virtual void noteOn()=0;

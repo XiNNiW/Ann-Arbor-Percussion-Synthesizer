@@ -8,11 +8,13 @@
 #ifndef INCLUDE_AUDIOEFFECTENVELOPEADAPTERINTERFACE_H_
 #define INCLUDE_AUDIOEFFECTENVELOPEADAPTERINTERFACE_H_
 
+#include <AudioStreamAdapterInterface.h>
+
 namespace AnnArborPercussion {
 
-class AudioEffectEnvelopeAdapterInterface {
+class AudioEffectEnvelopeAdapterInterface : public AudioStreamAdapterInterface{
 public:
-	virtual ~AudioEffectEnvelopeAdapterInterface()=0;
+	virtual ~AudioEffectEnvelopeAdapterInterface(){};
 	virtual void noteOn()=0;
 	virtual void noteOff()=0;
 	virtual void delay(float milliseconds)=0;
@@ -22,7 +24,7 @@ public:
 	virtual void sustain(float level)=0;
 	virtual void release(float milliseconds)=0;
 	virtual void releaseNoteOn(float milliseconds)=0;
-	virtual void update(void);
+	virtual void update(void)=0;
 };
 
 } /* namespace AnnArborPercussion */
