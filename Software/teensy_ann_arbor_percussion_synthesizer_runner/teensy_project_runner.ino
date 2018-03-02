@@ -7,7 +7,7 @@ using AnnArborPercussion::AnnArborPercussionControlsFactory;
 using AnnArborPercussion::AnnArborPercussionSynthesizer;
 
 AnnArborPercussionSynthesizer* annArborPercussionSynthesizer;
-AudioOutputI2S stream;
+AudioControlSGTL5000 stream;
 
 void setup()
 {

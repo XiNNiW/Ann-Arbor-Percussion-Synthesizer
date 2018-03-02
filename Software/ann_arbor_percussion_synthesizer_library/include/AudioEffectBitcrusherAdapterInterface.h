@@ -14,7 +14,7 @@ namespace AnnArborPercussion {
 class AudioEffectBitcrusherAdapterInterface : public AudioStreamAdapterInterface{
 public:
 	virtual ~AudioEffectBitcrusherAdapterInterface(){};
-	virtual void bits(int b)=0; //uint8_t
+	virtual void bits(unsigned int b)=0; //uint8_t
 	virtual void sampleRate(float hz)=0;
 	virtual void update(void)=0;
 };

@@ -12,7 +12,7 @@ namespace AnnArborPercussion {
 
 class AudioStreamAdapterInterface {
 public:
-	virtual ~AudioStreamAdapterInterface(){};
+	virtual ~AudioStreamAdapterInterface()=0;
 	virtual int processorUsage(void)=0;
 	virtual int processorUsageMax(void)=0;
 	virtual void processorUsageMaxReset(void)=0;
