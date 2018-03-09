@@ -13,6 +13,56 @@ AnnArborPercussionSynthesizerArchitecture::~AnnArborPercussionSynthesizerArchite
 	// TODO Auto-generated destructor stub
 }
 
+void AnnArborPercussionSynthesizerArchitecture::wireUpOscillators(
+		AudioLibraryProviderInterface* libraryProvider) {
+	libraryProvider->createAudioConnection(this->sineOscillator,
+			OUTPUT_CHANNEL_1, this->oscillatorMixer, input_channel_4);
+	libraryProvider->createAudioConnection(this->waveformOscillator,
+			OUTPUT_CHANNEL_1, this->oscillatorMixer, INPUT_CHANNEL_2);
+	libraryProvider->createAudioConnection(this->pulseWidthModulationOscillator,
+			OUTPUT_CHANNEL_1, this->oscillatorMixer, input_channel_3);
+	libraryProvider->createAudioConnection(this->simpleDrum, OUTPUT_CHANNEL_1,
+			this->oscillatorMixer, INPUT_CHANNEL_1);
+	libraryProvider->createAudioConnection(this->sineOscillator,
+			this->pulseWidthModulationOscillator);
+	libraryProvider->createAudioConnection(this->sineOscillator,
+			this->fmOscillator);
+}
+
+void AnnArborPercussionSynthesizerArchitecture::wireUpEnvelopes(
+		AudioLibraryProviderInterface* libraryProvider) {
+	libraryProvider->createAudioConnection(this->whiteNoiseGenerator,
+			this->noiseEnvelope);
+	libraryProvider->createAudioConnection(this->oscillatorMixer,
+			this->toneEnvelope);
+	libraryProvider->createAudioConnection(this->toneEnvelope,
+			this->bitcrusherEffect);
+	libraryProvider->createAudioConnection(this->noiseEnvelope,
+			OUTPUT_CHANNEL_1, this->prefilterMixer, INPUT_CHANNEL_2);
+	libraryProvider->createAudioConnection(this->bitcrusherEffect,
+			OUTPUT_CHANNEL_1, this->prefilterMixer, INPUT_CHANNEL_1);
+}
+
+void AnnArborPercussionSynthesizerArchitecture::wireUpFilter(
+		AudioLibraryProviderInterface* libraryProvider) {
+	libraryProvider->createAudioConnection(this->prefilterMixer,
+			OUTPUT_CHANNEL_1, this->filter, INPUT_CHANNEL_1);
+	libraryProvider->createAudioConnection(this->prefilterMixer,
+			OUTPUT_CHANNEL_1, this->filterMixer, input_channel_3);
+	libraryProvider->createAudioConnection(this->filter, OUTPUT_CHANNEL_1,
+			this->filterMixer, INPUT_CHANNEL_1);
+	libraryProvider->createAudioConnection(this->filter, OUTPUT_CHANNEL_3,
+			this->filterMixer, INPUT_CHANNEL_2);
+}
+
+void AnnArborPercussionSynthesizerArchitecture::wireUpOutput(
+		AudioLibraryProviderInterface* libraryProvider) {
+	libraryProvider->createAudioConnection(this->filterMixer, OUTPUT_CHANNEL_1,
+			this->output, INPUT_CHANNEL_1);
+	libraryProvider->createAudioConnection(this->filterMixer, OUTPUT_CHANNEL_1,
+			this->output, INPUT_CHANNEL_2);
+}
+
 AnnArborPercussionSynthesizerArchitecture::AnnArborPercussionSynthesizerArchitecture(AudioLibraryProviderInterface* libraryProvider) {
 	this->output=libraryProvider->createOutput();
 	this->bitcrusherEffect=libraryProvider->createBitcrusherEffect();
@@ -29,51 +79,10 @@ AnnArborPercussionSynthesizerArchitecture::AnnArborPercussionSynthesizerArchitec
 	this->filterMixer=libraryProvider->create4ChannelMixer();
 	this->oscillatorMixer=libraryProvider->create4ChannelMixer();
 
-	int output_channel_1 = 0;
-	int output_channel_3 = 2;
-
-	int input_channel_1 = 0;
-	int input_channel_2 = 1;
-	int input_channel_3 = 2;
-	int input_channel_4 = 3;
-
-	libraryProvider->createAudioConnection(this->sineOscillator,output_channel_1,
-			this->oscillatorMixer,input_channel_4);
-	libraryProvider->createAudioConnection(this->waveformOscillator, output_channel_1,
-			this->oscillatorMixer, input_channel_2);
-	libraryProvider->createAudioConnection(this->pulseWidthModulationOscillator, output_channel_1,
-			this->oscillatorMixer, input_channel_3);
-	libraryProvider->createAudioConnection(this->simpleDrum, output_channel_1,
-			this->oscillatorMixer, input_channel_1);
-	libraryProvider->createAudioConnection(this->sineOscillator,this->pulseWidthModulationOscillator);
-	libraryProvider->createAudioConnection(this->sineOscillator,this->fmOscillator);
-
-	libraryProvider->createAudioConnection(this->whiteNoiseGenerator,this->noiseEnvelope);
-	libraryProvider->createAudioConnection(this->oscillatorMixer,this->toneEnvelope);
-	libraryProvider->createAudioConnection(this->toneEnvelope,this->bitcrusherEffect);
-
-	libraryProvider->createAudioConnection(this->noiseEnvelope,output_channel_1,
-			this->prefilterMixer,input_channel_2);
-	libraryProvider->createAudioConnection(this->bitcrusherEffect,output_channel_1,
-			this->prefilterMixer,input_channel_1);
-
-	libraryProvider->createAudioConnection(this->prefilterMixer,output_channel_1,
-			this->filter,input_channel_1);
-
-	libraryProvider->createAudioConnection(this->prefilterMixer,output_channel_1,
-			this->filterMixer,input_channel_3);
-	libraryProvider->createAudioConnection(this->filter,output_channel_1,
-			this->filterMixer,input_channel_1);
-	libraryProvider->createAudioConnection(this->filter, output_channel_3,
-			this->filterMixer,input_channel_2);
-
-	libraryProvider->createAudioConnection(this->filterMixer,output_channel_1,
-			this->output,input_channel_1);
-	libraryProvider->createAudioConnection(this->filterMixer, output_channel_1,
-			this->output,input_channel_2);
-
-
-
+	wireUpOscillators(libraryProvider);
+	wireUpEnvelopes(libraryProvider);
+	wireUpFilter(libraryProvider);
+	wireUpOutput(libraryProvider);
 }
 
 AudioSynthWaveformSineAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSineOscillator(){

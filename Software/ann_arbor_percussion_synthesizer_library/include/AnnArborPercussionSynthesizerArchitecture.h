@@ -32,6 +32,14 @@ public:
 	AudioOutputI2SAdapterInterface* getOutput();
 
 private:
+	const int OUTPUT_CHANNEL_1 = 0;
+	const int OUTPUT_CHANNEL_3 = 2;
+
+	const int INPUT_CHANNEL_1 = 0;
+	const int INPUT_CHANNEL_2 = 1;
+	const int input_channel_3 = 2;
+	const int input_channel_4 = 3;
+
 	AudioSynthWaveformSineAdapterInterface* sineOscillator;
 	AudioSynthWaveformSineModulatedAdapterInterface* fmOscillator;
 	AudioSynthWaveformAdapterInterface* waveformOscillator;
@@ -47,6 +55,10 @@ private:
 	AudioMixer4AdapterInterface* oscillatorMixer;
 	AudioOutputI2SAdapterInterface* output;
 
+	void wireUpOscillators(AudioLibraryProviderInterface* libraryProvider);
+	void wireUpEnvelopes(AudioLibraryProviderInterface* libraryProvider);
+	void wireUpFilter(AudioLibraryProviderInterface* libraryProvider);
+	void wireUpOutput(AudioLibraryProviderInterface* libraryProvider);
 };
 
 } /* namespace AnnArborPercussion */
