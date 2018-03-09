@@ -5,15 +5,15 @@
  *      Author: xinniw
  */
 
-#ifndef SRC_MOCKWAVEFORMPWMSYNTH_H_
-#define SRC_MOCKWAVEFORMPWMSYNTH_H_
+#ifndef SRC_MOCKPULSEWIDTHMODULATIONOSCILLATOR_H_
+#define SRC_MOCKPULSEWIDTHMODULATIONOSCILLATOR_H_
 
-#include <AudioSynthWaveformPWMAdapterInterface.h>
+#include <PulseWidthModulationOscillatorAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioSynthWaveformPWMAdapterInterface;
+using AnnArborPercussion::PulseWidthModulationOscillatorAdapterInterface;
 
-class MockWaveformPWMSynth : public AudioSynthWaveformPWMAdapterInterface {
+class MockPulseWidthModulationOscillator : public PulseWidthModulationOscillatorAdapterInterface {
 
 	MOCK_METHOD1(frequency,void(float freq));
 	MOCK_METHOD1(amplitude,void(float n));
@@ -25,4 +25,4 @@ class MockWaveformPWMSynth : public AudioSynthWaveformPWMAdapterInterface {
 	MOCK_METHOD0(update,void(void));
 };
 
-#endif /* SRC_MOCKWAVEFORMPWMSYNTH_H_ */
+#endif /* SRC_MOCKPULSEWIDTHMODULATIONOSCILLATOR_H_ */

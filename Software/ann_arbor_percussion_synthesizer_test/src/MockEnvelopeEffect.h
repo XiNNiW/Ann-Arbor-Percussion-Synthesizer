@@ -8,12 +8,12 @@
 #ifndef SRC_MOCKENVELOPEEFFECT_H_
 #define SRC_MOCKENVELOPEEFFECT_H_
 
-#include <AudioEffectEnvelopeAdapterInterface.h>
+#include <EnvelopeEffectAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioEffectEnvelopeAdapterInterface;
+using AnnArborPercussion::EnvelopeEffectAdapterInterface;
 
-class MockEnvelopeEffect : public AudioEffectEnvelopeAdapterInterface {
+class MockEnvelopeEffect : public EnvelopeEffectAdapterInterface {
 
 	MOCK_METHOD0(noteOn,void(void));
 	MOCK_METHOD0(noteOff,void(void));

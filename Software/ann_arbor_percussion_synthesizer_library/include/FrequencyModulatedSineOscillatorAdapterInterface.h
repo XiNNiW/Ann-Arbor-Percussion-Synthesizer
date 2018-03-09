@@ -5,14 +5,14 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOSYNTHWAVEFORMSINEMODULATEDADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOSYNTHWAVEFORMSINEMODULATEDADAPTERINTERFACE_H_
+#ifndef INCLUDE_FREQUENCYMODULATEDSINEOSCILLATORADAPTERINTERFACE_H_
+#define INCLUDE_FREQUENCYMODULATEDSINEOSCILLATORADAPTERINTERFACE_H_
 #include <AudioStreamAdapterInterface.h>
 namespace AnnArborPercussion {
 
-class AudioSynthWaveformSineModulatedAdapterInterface: public AudioStreamAdapterInterface {
+class FrequencyModulatedSineOscillatorAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioSynthWaveformSineModulatedAdapterInterface();
+	virtual ~FrequencyModulatedSineOscillatorAdapterInterface();
 	virtual void frequency(float freq)=0;
 	virtual void phase(float angle)=0;
 	virtual void amplitude(float n)=0;
@@ -21,5 +21,5 @@ public:
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOSYNTHWAVEFORMSINEMODULATEDADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_FREQUENCYMODULATEDSINEOSCILLATORADAPTERINTERFACE_H_ */
 

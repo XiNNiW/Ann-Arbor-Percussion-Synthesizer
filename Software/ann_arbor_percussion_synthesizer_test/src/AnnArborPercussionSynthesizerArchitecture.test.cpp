@@ -9,11 +9,6 @@
 #include "gmock/gmock.h"
 #include <AnnArborPercussionSynthesizerArchitecture.h>
 #include "MockAudioLibraryProvider.h"
-#include "MockSineWaveformSynth.h"
-#include "MockModulatedSineWaveformSynth.h"
-#include "MockWaveformSynth.h"
-#include "MockWhiteNoiseSynth.h"
-#include "MockWaveformPWMSynth.h"
 #include "MockSimpleDrum.h"
 #include "Mock4ChannelMixer.h"
 #include "MockEnvelopeEffect.h"
@@ -21,6 +16,11 @@
 #include "MockStateVariableFilter.h"
 #include "MockI2SOutput.h"
 #include "MockAudioConnection.h"
+#include "MockFrequencyModulationOscillator.h"
+#include "MockPulseWidthModulationOscillator.h"
+#include "MockSineOscillator.h"
+#include "MockWaveformOscillator.h"
+#include "MockWhiteNoiseGenerator.h"
 
 
 using AnnArborPercussion::AnnArborPercussionSynthesizerArchitecture;
@@ -28,11 +28,11 @@ using AnnArborPercussion::AnnArborPercussionSynthesizerArchitecture;
 TEST(AnnArborPercussionSynthesizerArchitectureTest,creates_and_connects_components_on_construction){
 
 	MockAudioLibraryProvider mockLibraryProvider;
-	MockSineWaveformSynth mockSineWaveformSynth;
-	MockModulatedSineWaveformSynth mockModulatedSineWaveformSynth;
-	MockWaveformSynth mockWaveformSynth;
-	MockWhiteNoiseSynth mockWhiteNoiseSynth;
-	MockWaveformPWMSynth mockWaveformPWMSynth;
+	MockSineOscillator mockSineOscillator;
+	MockFrequencyModulationOscillator mockFrequencyModulationOscillator;
+	MockWaveformOscillator mockWaveformOscillator;
+	MockWhiteNoiseGenerator mockWhiteNoiseGenerator;
+	MockPulseWidthModulationOscillator mockPulseWidthModulationOscillator;
 	MockSimpleDrum mockSimpleDrum;
 	Mock4ChannelMixer mock4ChannelMixer1;
 	Mock4ChannelMixer mock4ChannelMixer2;
@@ -64,19 +64,19 @@ TEST(AnnArborPercussionSynthesizerArchitectureTest,creates_and_connects_componen
 
 	EXPECT_CALL(mockLibraryProvider,createSineWaveformSynth())
 			.Times(1)
-			.WillOnce(testing::Return(&mockSineWaveformSynth));
+			.WillOnce(testing::Return(&mockSineOscillator));
 	EXPECT_CALL(mockLibraryProvider,createModulatedSineWaveformSynth())
 			.Times(1)
-			.WillOnce(testing::Return(&mockModulatedSineWaveformSynth));
+			.WillOnce(testing::Return(&mockFrequencyModulationOscillator));
 	EXPECT_CALL(mockLibraryProvider,createWaveformSynth())
 			.Times(1)
-			.WillOnce(testing::Return(&mockWaveformSynth));
+			.WillOnce(testing::Return(&mockWaveformOscillator));
 	EXPECT_CALL(mockLibraryProvider,createWhiteNoiseSynth())
 			.Times(1)
-			.WillOnce(testing::Return(&mockWhiteNoiseSynth));
+			.WillOnce(testing::Return(&mockWhiteNoiseGenerator));
 	EXPECT_CALL(mockLibraryProvider,createPWMWaveformSynth())
 			.Times(1)
-			.WillOnce(testing::Return(&mockWaveformPWMSynth));
+			.WillOnce(testing::Return(&mockPulseWidthModulationOscillator));
 	EXPECT_CALL(mockLibraryProvider,createSimpleDrum())
 			.Times(1)
 			.WillOnce(testing::Return(&mockSimpleDrum));
@@ -99,22 +99,22 @@ TEST(AnnArborPercussionSynthesizerArchitectureTest,creates_and_connects_componen
 			.Times(1)
 			.WillOnce(testing::Return(&mockOutput));
 
-	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSineWaveformSynth,&mockWaveformPWMSynth))
+	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSineOscillator,&mockPulseWidthModulationOscillator))
 			.Times(1)
 			.WillOnce(testing::Return(&mockConnection1));
-	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSineWaveformSynth,&mockModulatedSineWaveformSynth))
+	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSineOscillator,&mockFrequencyModulationOscillator))
 			.Times(1)
 			.WillOnce(testing::Return(&mockConnection2));
-	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSineWaveformSynth,0,&mock4ChannelMixer3,3))
+	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSineOscillator,0,&mock4ChannelMixer3,3))
 			.Times(1)
 			.WillOnce(testing::Return(&mockConnection3));
-	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockWaveformSynth,0,&mock4ChannelMixer3,1))
+	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockWaveformOscillator,0,&mock4ChannelMixer3,1))
 			.Times(1)
 			.WillOnce(testing::Return(&mockConnection4));
-	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockWhiteNoiseSynth,&mockEffectEnvelope2))
+	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockWhiteNoiseGenerator,&mockEffectEnvelope2))
 			.Times(1)
 			.WillOnce(testing::Return(&mockConnection5));
-	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockWaveformPWMSynth,0,&mock4ChannelMixer3,2))
+	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockPulseWidthModulationOscillator,0,&mock4ChannelMixer3,2))
 			.Times(1)
 			.WillOnce(testing::Return(&mockConnection6));
 	EXPECT_CALL(mockLibraryProvider,createAudioConnection(&mockSimpleDrum,0,&mock4ChannelMixer3,0))
@@ -153,11 +153,11 @@ TEST(AnnArborPercussionSynthesizerArchitectureTest,creates_and_connects_componen
 
 	AnnArborPercussionSynthesizerArchitecture* synthArchitecture = new AnnArborPercussionSynthesizerArchitecture(&mockLibraryProvider);
 
-	EXPECT_EQ(&mockSineWaveformSynth,synthArchitecture->getSineOscillator());
-	EXPECT_EQ(&mockModulatedSineWaveformSynth,synthArchitecture->getSineFrequencyModulationOscillator());
-	EXPECT_EQ(&mockWaveformSynth,synthArchitecture->getWaveformOscillator());
-	EXPECT_EQ(&mockWaveformPWMSynth,synthArchitecture->getPulseWidthModulationOscillator());
-	EXPECT_EQ(&mockWhiteNoiseSynth,synthArchitecture->getWhiteNoiseGenerator());
+	EXPECT_EQ(&mockSineOscillator,synthArchitecture->getSineOscillator());
+	EXPECT_EQ(&mockFrequencyModulationOscillator,synthArchitecture->getSineFrequencyModulationOscillator());
+	EXPECT_EQ(&mockWaveformOscillator,synthArchitecture->getWaveformOscillator());
+	EXPECT_EQ(&mockPulseWidthModulationOscillator,synthArchitecture->getPulseWidthModulationOscillator());
+	EXPECT_EQ(&mockWhiteNoiseGenerator,synthArchitecture->getWhiteNoiseGenerator());
 	EXPECT_EQ(&mockSimpleDrum,synthArchitecture->getSimpleDrumSynthesizer());
 	EXPECT_EQ(&mockEffectEnvelope2,synthArchitecture->getNoiseEnvelope());
 	EXPECT_EQ(&mockEffectEnvelope1,synthArchitecture->getToneEnvelope());

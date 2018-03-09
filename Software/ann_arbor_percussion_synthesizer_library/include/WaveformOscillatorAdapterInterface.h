@@ -5,16 +5,16 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOSYNTHWAVEFORMADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOSYNTHWAVEFORMADAPTERINTERFACE_H_
+#ifndef INCLUDE_WAVEFORMOSCILLATORADAPTERINTERFACE_H_
+#define INCLUDE_WAVEFORMOSCILLATORADAPTERINTERFACE_H_
 
 #include <AudioStreamAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-class AudioSynthWaveformAdapterInterface: public AudioStreamAdapterInterface {
+class WaveformOscillatorAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioSynthWaveformAdapterInterface();
+	virtual ~WaveformOscillatorAdapterInterface();
 	virtual void frequency(float t_freq)=0;
 	virtual void phase(float angle)=0;
 	virtual void amplitude(float n)=0;
@@ -29,5 +29,5 @@ public:
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOSYNTHWAVEFORMADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_WAVEFORMOSCILLATORADAPTERINTERFACE_H_ */
 

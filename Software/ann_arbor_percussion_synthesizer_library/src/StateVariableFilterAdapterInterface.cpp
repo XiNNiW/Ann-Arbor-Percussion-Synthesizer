@@ -5,11 +5,11 @@
  *      Author: xinniw
  */
 
-#include <AudioFilterStateVariableAdapterInterface.h>
+#include <StateVariableFilterAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioFilterStateVariableAdapterInterface::~AudioFilterStateVariableAdapterInterface() {
+StateVariableFilterAdapterInterface::~StateVariableFilterAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

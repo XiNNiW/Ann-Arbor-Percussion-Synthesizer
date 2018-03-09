@@ -1,15 +1,15 @@
 /*
- * AudioSynthNoiseWhiteAdapterInterface.cpp
+ * AudioSynthWaveformSineAdapterInterface.cpp
  *
  *  Created on: Mar 3, 2018
  *      Author: xinniw
  */
 
-#include <AudioSynthNoiseWhiteAdapterInterface.h>
+#include <SineOscillatorAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioSynthNoiseWhiteAdapterInterface::~AudioSynthNoiseWhiteAdapterInterface() {
+SineOscillatorAdapterInterface::~SineOscillatorAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

@@ -5,15 +5,15 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOEFFECTBITCRUSHERADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOEFFECTBITCRUSHERADAPTERINTERFACE_H_
+#ifndef INCLUDE_BITCRUSHEREFFECTADAPTERINTERFACE_H_
+#define INCLUDE_BITCRUSHEREFFECTADAPTERINTERFACE_H_
 
 #include <AudioStreamAdapterInterface.h>
 namespace AnnArborPercussion {
 
-class AudioEffectBitcrusherAdapterInterface: public AudioStreamAdapterInterface {
+class BitcrusherEffectAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioEffectBitcrusherAdapterInterface();
+	virtual ~BitcrusherEffectAdapterInterface();
 	virtual void bits(unsigned int b)=0; //uint8_t
 	virtual void sampleRate(float hz)=0;
 	virtual void update(void)=0;
@@ -21,5 +21,5 @@ public:
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOEFFECTBITCRUSHERADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_BITCRUSHEREFFECTADAPTERINTERFACE_H_ */
 

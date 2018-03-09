@@ -8,12 +8,12 @@
 #ifndef SRC_MOCKSIMPLEDRUM_H_
 #define SRC_MOCKSIMPLEDRUM_H_
 
-#include <AudioSynthSimpleDrumAdapterInterface.h>
+#include <SimpleDrumAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioSynthSimpleDrumAdapterInterface;
+using AnnArborPercussion::SimpleDrumAdapterInterface;
 
-class MockSimpleDrum : public AudioSynthSimpleDrumAdapterInterface {
+class MockSimpleDrum : public SimpleDrumAdapterInterface {
 
 	MOCK_METHOD0(noteOn,void(void));
 	MOCK_METHOD1(frequency,void(float freq));

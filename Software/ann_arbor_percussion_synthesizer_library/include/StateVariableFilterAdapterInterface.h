@@ -5,16 +5,16 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOFILTERSTATEVARIABLEADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOFILTERSTATEVARIABLEADAPTERINTERFACE_H_
+#ifndef INCLUDE_STATEVARIABLEFILTERADAPTERINTERFACE_H_
+#define INCLUDE_STATEVARIABLEFILTERADAPTERINTERFACE_H_
 
 #include <AudioStreamAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-class AudioFilterStateVariableAdapterInterface: public AudioStreamAdapterInterface {
+class StateVariableFilterAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioFilterStateVariableAdapterInterface();
+	virtual ~StateVariableFilterAdapterInterface();
 	virtual void frequency(float freq)=0;
 	virtual void resonance(float q)=0;
 	virtual void octaveControl(float n)=0;
@@ -23,5 +23,5 @@ public:
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOFILTERSTATEVARIABLEADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_STATEVARIABLEFILTERADAPTERINTERFACE_H_ */
 

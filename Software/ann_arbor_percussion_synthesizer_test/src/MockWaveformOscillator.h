@@ -5,15 +5,15 @@
  *      Author: xinniw
  */
 
-#ifndef SRC_MOCKWAVEFORMSYNTH_H_
-#define SRC_MOCKWAVEFORMSYNTH_H_
+#ifndef SRC_MOCKWAVEFORMOSCILLATOR_H_
+#define SRC_MOCKWAVEFORMOSCILLATOR_H_
 
-#include <AudioSynthWaveformAdapterInterface.h>
+#include <WaveformOscillatorAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioSynthWaveformAdapterInterface;
+using AnnArborPercussion::WaveformOscillatorAdapterInterface;
 
-class MockWaveformSynth: public AudioSynthWaveformAdapterInterface {
+class MockWaveformOscillator: public WaveformOscillatorAdapterInterface {
 
 	MOCK_METHOD1(frequency,void(float freq));
 	MOCK_METHOD1(phase,void(float angle));
@@ -32,5 +32,5 @@ class MockWaveformSynth: public AudioSynthWaveformAdapterInterface {
 
 };
 
-#endif /* SRC_MOCKWAVEFORMSYNTH_H_ */
+#endif /* SRC_MOCKWAVEFORMOSCILLATOR_H_ */
 

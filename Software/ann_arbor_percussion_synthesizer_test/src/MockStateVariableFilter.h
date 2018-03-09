@@ -8,12 +8,12 @@
 #ifndef SRC_MOCKSTATEVARIABLEFILTER_H_
 #define SRC_MOCKSTATEVARIABLEFILTER_H_
 
-#include <AudioFilterStateVariableAdapterInterface.h>
+#include <StateVariableFilterAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioFilterStateVariableAdapterInterface;
+using AnnArborPercussion::StateVariableFilterAdapterInterface;
 
-class MockStateVariableFilter : public AudioFilterStateVariableAdapterInterface {
+class MockStateVariableFilter : public StateVariableFilterAdapterInterface {
 	MOCK_METHOD1(frequency,void(float freq));
 	MOCK_METHOD1(resonance,void(float q));
 	MOCK_METHOD1(octaveControl,void(float n));

@@ -5,16 +5,16 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOSYNTHSIMPLEDRUMADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOSYNTHSIMPLEDRUMADAPTERINTERFACE_H_
+#ifndef INCLUDE_SIMPLEDRUMADAPTERINTERFACE_H_
+#define INCLUDE_SIMPLEDRUMADAPTERINTERFACE_H_
 
 #include <AudioStreamAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-class AudioSynthSimpleDrumAdapterInterface: public AudioStreamAdapterInterface {
+class SimpleDrumAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioSynthSimpleDrumAdapterInterface();
+	virtual ~SimpleDrumAdapterInterface();
 	virtual void noteOn()=0;
 	virtual void frequency(float freq)=0;
 	virtual void length(int milliseconds)=0; //int32_t
@@ -25,5 +25,5 @@ public:
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOSYNTHSIMPLEDRUMADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_SIMPLEDRUMADAPTERINTERFACE_H_ */
 

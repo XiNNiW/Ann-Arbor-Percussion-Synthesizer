@@ -5,16 +5,16 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOEFFECTENVELOPEADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOEFFECTENVELOPEADAPTERINTERFACE_H_
+#ifndef INCLUDE_ENVELOPEEFFECTADAPTERINTERFACE_H_
+#define INCLUDE_ENVELOPEEFFECTADAPTERINTERFACE_H_
 
 #include <AudioStreamAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-class AudioEffectEnvelopeAdapterInterface: public AudioStreamAdapterInterface {
+class EnvelopeEffectAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioEffectEnvelopeAdapterInterface();
+	virtual ~EnvelopeEffectAdapterInterface();
 	virtual void noteOn()=0;
 	virtual void noteOff()=0;
 	virtual void delay(float milliseconds)=0;
@@ -29,5 +29,5 @@ public:
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOEFFECTENVELOPEADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_ENVELOPEEFFECTADAPTERINTERFACE_H_ */
 

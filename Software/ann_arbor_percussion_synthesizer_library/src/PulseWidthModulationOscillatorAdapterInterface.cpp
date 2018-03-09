@@ -5,11 +5,11 @@
  *      Author: xinniw
  */
 
-#include <AudioSynthWaveformPWMAdapterInterface.h>
+#include <PulseWidthModulationOscillatorAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioSynthWaveformPWMAdapterInterface::~AudioSynthWaveformPWMAdapterInterface() {
+PulseWidthModulationOscillatorAdapterInterface::~PulseWidthModulationOscillatorAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

@@ -5,11 +5,11 @@
  *      Author: xinniw
  */
 
-#include <AudioSynthWaveformSineModulatedAdapterInterface.h>
+#include <FrequencyModulatedSineOscillatorAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioSynthWaveformSineModulatedAdapterInterface::~AudioSynthWaveformSineModulatedAdapterInterface() {
+FrequencyModulatedSineOscillatorAdapterInterface::~FrequencyModulatedSineOscillatorAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

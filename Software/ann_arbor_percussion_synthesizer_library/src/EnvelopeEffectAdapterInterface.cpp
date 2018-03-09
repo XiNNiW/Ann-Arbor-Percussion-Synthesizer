@@ -1,15 +1,15 @@
 /*
- * AudioSynthSimpleDrumAdapterInterface.cpp
+ * AudioEffectEnvelopeAdapterInterface.cpp
  *
  *  Created on: Mar 3, 2018
  *      Author: xinniw
  */
 
-#include <AudioSynthSimpleDrumAdapterInterface.h>
+#include <EnvelopeEffectAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioSynthSimpleDrumAdapterInterface::~AudioSynthSimpleDrumAdapterInterface() {
+EnvelopeEffectAdapterInterface::~EnvelopeEffectAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

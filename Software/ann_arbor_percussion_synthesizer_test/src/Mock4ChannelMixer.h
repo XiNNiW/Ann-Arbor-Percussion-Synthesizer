@@ -8,12 +8,12 @@
 #ifndef SRC_MOCK4CHANNELMIXER_H_
 #define SRC_MOCK4CHANNELMIXER_H_
 
-#include <AudioMixer4AdapterInterface.h>
+#include <Mixer4AdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioMixer4AdapterInterface;
+using AnnArborPercussion::Mixer4AdapterInterface;
 
-class Mock4ChannelMixer : public AudioMixer4AdapterInterface {
+class Mock4ChannelMixer : public Mixer4AdapterInterface {
 	MOCK_METHOD2(gain,void(unsigned int channel, float gain));
 
 	MOCK_METHOD0(processorUsage,int(void));

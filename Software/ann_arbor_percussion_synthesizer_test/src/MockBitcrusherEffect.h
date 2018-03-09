@@ -8,12 +8,12 @@
 #ifndef SRC_MOCKBITCRUSHEREFFECT_H_
 #define SRC_MOCKBITCRUSHEREFFECT_H_
 
-#include <AudioEffectBitcrusherAdapterInterface.h>
+#include <BitcrusherEffectAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioEffectBitcrusherAdapterInterface;
+using AnnArborPercussion::BitcrusherEffectAdapterInterface;
 
-class MockBitcrusherEffect : public AudioEffectBitcrusherAdapterInterface {
+class MockBitcrusherEffect : public BitcrusherEffectAdapterInterface {
 
 	MOCK_METHOD1(bits,void(unsigned int b));
 	MOCK_METHOD1(sampleRate,void(float hz));

@@ -5,15 +5,15 @@
  *      Author: xinniw
  */
 
-#ifndef SRC_MOCKWHITENOISESYNTH_H_
-#define SRC_MOCKWHITENOISESYNTH_H_
+#ifndef SRC_MOCKWHITENOISEGENERATOR_H_
+#define SRC_MOCKWHITENOISEGENERATOR_H_
 
-#include <AudioSynthNoiseWhiteAdapterInterface.h>
+#include <WhiteNoiseGeneratorAdapterInterface.h>
 #include "gmock/gmock.h"
 
-using AnnArborPercussion::AudioSynthNoiseWhiteAdapterInterface;
+using AnnArborPercussion::WhiteNoiseGeneratorAdapterInterface;
 
-class MockWhiteNoiseSynth : public AudioSynthNoiseWhiteAdapterInterface {
+class MockWhiteNoiseGenerator : public WhiteNoiseGeneratorAdapterInterface {
 
 	MOCK_METHOD1(amplitude,void(float n));
 
@@ -24,4 +24,4 @@ class MockWhiteNoiseSynth : public AudioSynthNoiseWhiteAdapterInterface {
 	MOCK_METHOD0(update,void(void));
 };
 
-#endif /* SRC_MOCKWHITENOISESYNTH_H_ */
+#endif /* SRC_MOCKWHITENOISEGENERATOR_H_ */

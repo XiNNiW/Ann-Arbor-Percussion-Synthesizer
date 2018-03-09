@@ -11,16 +11,16 @@
 #include <AudioStreamAdapterInterface.h>
 #include <AudioConnectionAdapterInterface.h>
 #include <AudioOutputI2SAdapterInterface.h>
-#include <AudioMixer4AdapterInterface.h>
-#include <AudioSynthNoiseWhiteAdapterInterface.h>
-#include <AudioSynthSimpleDrumAdapterInterface.h>
-#include <AudioSynthWaveformAdapterInterface.h>
-#include <AudioSynthWaveformSineAdapterInterface.h>
-#include <AudioSynthWaveformSineModulatedAdapterInterface.h>
-#include <AudioSynthWaveformPWMAdapterInterface.h>
-#include <AudioFilterStateVariableAdapterInterface.h>
-#include <AudioEffectEnvelopeAdapterInterface.h>
-#include <AudioEffectBitcrusherAdapterInterface.h>
+#include <BitcrusherEffectAdapterInterface.h>
+#include <EnvelopeEffectAdapterInterface.h>
+#include <FrequencyModulatedSineOscillatorAdapterInterface.h>
+#include <Mixer4AdapterInterface.h>
+#include <PulseWidthModulationOscillatorAdapterInterface.h>
+#include <SimpleDrumAdapterInterface.h>
+#include <SineOscillatorAdapterInterface.h>
+#include <StateVariableFilterAdapterInterface.h>
+#include <WaveformOscillatorAdapterInterface.h>
+#include <WhiteNoiseGeneratorAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
@@ -35,16 +35,16 @@ public:
 			AudioStreamAdapterInterface* source, unsigned char sourceOutput,
 			AudioStreamAdapterInterface* destination,
 			unsigned char destinationInput)=0;
-	virtual AudioMixer4AdapterInterface* create4ChannelMixer()=0;
-	virtual AudioSynthNoiseWhiteAdapterInterface* createWhiteNoiseSynth()=0;
-	virtual AudioSynthSimpleDrumAdapterInterface* createSimpleDrum()=0;
-	virtual AudioSynthWaveformAdapterInterface* createWaveformSynth()=0;
-	virtual AudioSynthWaveformSineAdapterInterface* createSineWaveformSynth()=0;
-	virtual AudioSynthWaveformSineModulatedAdapterInterface* createModulatedSineWaveformSynth()=0;
-	virtual AudioSynthWaveformPWMAdapterInterface* createPWMWaveformSynth()=0;
-	virtual AudioFilterStateVariableAdapterInterface* createStateVariableFilter()=0;
-	virtual AudioEffectEnvelopeAdapterInterface* createEnvelopeEffect()=0;
-	virtual AudioEffectBitcrusherAdapterInterface* createBitcrusherEffect()=0;
+	virtual Mixer4AdapterInterface* create4ChannelMixer()=0;
+	virtual WhiteNoiseGeneratorAdapterInterface* createWhiteNoiseSynth()=0;
+	virtual SimpleDrumAdapterInterface* createSimpleDrum()=0;
+	virtual WaveformOscillatorAdapterInterface* createWaveformSynth()=0;
+	virtual SineOscillatorAdapterInterface* createSineWaveformSynth()=0;
+	virtual FrequencyModulatedSineOscillatorAdapterInterface* createModulatedSineWaveformSynth()=0;
+	virtual PulseWidthModulationOscillatorAdapterInterface* createPWMWaveformSynth()=0;
+	virtual StateVariableFilterAdapterInterface* createStateVariableFilter()=0;
+	virtual EnvelopeEffectAdapterInterface* createEnvelopeEffect()=0;
+	virtual BitcrusherEffectAdapterInterface* createBitcrusherEffect()=0;
 
 };
 

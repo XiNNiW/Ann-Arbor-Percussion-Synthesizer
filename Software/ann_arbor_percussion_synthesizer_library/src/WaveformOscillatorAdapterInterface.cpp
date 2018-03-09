@@ -1,15 +1,15 @@
 /*
- * AudioEffectEnvelopeAdapterInterface.cpp
+ * AudioSynthWaveformAdapterInterface.cpp
  *
  *  Created on: Mar 3, 2018
  *      Author: xinniw
  */
 
-#include <AudioEffectEnvelopeAdapterInterface.h>
+#include <WaveformOscillatorAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioEffectEnvelopeAdapterInterface::~AudioEffectEnvelopeAdapterInterface() {
+WaveformOscillatorAdapterInterface::~WaveformOscillatorAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

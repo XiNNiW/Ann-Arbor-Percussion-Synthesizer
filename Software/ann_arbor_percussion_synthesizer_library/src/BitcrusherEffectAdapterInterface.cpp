@@ -5,11 +5,11 @@
  *      Author: xinniw
  */
 
-#include <AudioEffectBitcrusherAdapterInterface.h>
+#include <BitcrusherEffectAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioEffectBitcrusherAdapterInterface::~AudioEffectBitcrusherAdapterInterface() {
+BitcrusherEffectAdapterInterface::~BitcrusherEffectAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

@@ -5,21 +5,21 @@
  *      Author: xinniw
  */
 
-#ifndef INCLUDE_AUDIOMIXER4ADAPTERINTERFACE_H_
-#define INCLUDE_AUDIOMIXER4ADAPTERINTERFACE_H_
+#ifndef INCLUDE_MIXER4ADAPTERINTERFACE_H_
+#define INCLUDE_MIXER4ADAPTERINTERFACE_H_
 
 #include <AudioStreamAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-class AudioMixer4AdapterInterface: public AudioStreamAdapterInterface {
+class Mixer4AdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioMixer4AdapterInterface();
+	virtual ~Mixer4AdapterInterface();
 	virtual void update(void)=0;
 	virtual void gain(unsigned int channel, float gain)=0;
 };
 
 } /* namespace AnnArborPercussion */
 
-#endif /* INCLUDE_AUDIOMIXER4ADAPTERINTERFACE_H_ */
+#endif /* INCLUDE_MIXER4ADAPTERINTERFACE_H_ */
 

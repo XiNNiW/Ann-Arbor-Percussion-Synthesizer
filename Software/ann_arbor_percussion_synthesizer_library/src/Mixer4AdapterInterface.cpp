@@ -1,15 +1,15 @@
 /*
- * AudioSynthWaveformAdapterInterface.cpp
+ * AudioMixer4AdapterInterface.cpp
  *
  *  Created on: Mar 3, 2018
  *      Author: xinniw
  */
 
-#include <AudioSynthWaveformAdapterInterface.h>
+#include <Mixer4AdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioSynthWaveformAdapterInterface::~AudioSynthWaveformAdapterInterface() {
+Mixer4AdapterInterface::~Mixer4AdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

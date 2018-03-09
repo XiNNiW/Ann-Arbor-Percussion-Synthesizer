@@ -16,43 +16,43 @@ class AnnArborPercussionSynthesizerArchitecture {
 public:
 	virtual ~AnnArborPercussionSynthesizerArchitecture();
 	AnnArborPercussionSynthesizerArchitecture(AudioLibraryProviderInterface* libraryProvider);
-	AudioSynthWaveformSineAdapterInterface* getSineOscillator();
-	AudioSynthWaveformSineModulatedAdapterInterface* getSineFrequencyModulationOscillator();
-	AudioSynthWaveformAdapterInterface* getWaveformOscillator();
-	AudioSynthWaveformPWMAdapterInterface* getPulseWidthModulationOscillator();
-	AudioSynthNoiseWhiteAdapterInterface* getWhiteNoiseGenerator();
-	AudioSynthSimpleDrumAdapterInterface* getSimpleDrumSynthesizer();
-	AudioEffectEnvelopeAdapterInterface* getNoiseEnvelope();
-	AudioEffectEnvelopeAdapterInterface* getToneEnvelope();
-	AudioEffectBitcrusherAdapterInterface* getBitcrusherEffect();
-	AudioFilterStateVariableAdapterInterface* getFilter();
-	AudioMixer4AdapterInterface* getPrefilterMixer();
-	AudioMixer4AdapterInterface* getFilterMixer();
-	AudioMixer4AdapterInterface* getOscillatorMixer();
+	SineOscillatorAdapterInterface* getSineOscillator();
+	FrequencyModulatedSineOscillatorAdapterInterface* getSineFrequencyModulationOscillator();
+	WaveformOscillatorAdapterInterface* getWaveformOscillator();
+	PulseWidthModulationOscillatorAdapterInterface* getPulseWidthModulationOscillator();
+	WhiteNoiseGeneratorAdapterInterface* getWhiteNoiseGenerator();
+	SimpleDrumAdapterInterface* getSimpleDrumSynthesizer();
+	EnvelopeEffectAdapterInterface* getNoiseEnvelope();
+	EnvelopeEffectAdapterInterface* getToneEnvelope();
+	BitcrusherEffectAdapterInterface* getBitcrusherEffect();
+	StateVariableFilterAdapterInterface* getFilter();
+	Mixer4AdapterInterface* getPrefilterMixer();
+	Mixer4AdapterInterface* getFilterMixer();
+	Mixer4AdapterInterface* getOscillatorMixer();
 	AudioOutputI2SAdapterInterface* getOutput();
 
 private:
-	const int OUTPUT_CHANNEL_1 = 0;
-	const int OUTPUT_CHANNEL_3 = 2;
+	static const int OUTPUT_CHANNEL_1 = 0;
+	static const int OUTPUT_CHANNEL_3 = 2;
 
-	const int INPUT_CHANNEL_1 = 0;
-	const int INPUT_CHANNEL_2 = 1;
-	const int input_channel_3 = 2;
-	const int input_channel_4 = 3;
+	static const int INPUT_CHANNEL_1 = 0;
+	static const int INPUT_CHANNEL_2 = 1;
+	static const int INPUT_CHANNEL_3 = 2;
+	static const int INPUT_CHANNEL_4 = 3;
 
-	AudioSynthWaveformSineAdapterInterface* sineOscillator;
-	AudioSynthWaveformSineModulatedAdapterInterface* fmOscillator;
-	AudioSynthWaveformAdapterInterface* waveformOscillator;
-	AudioSynthWaveformPWMAdapterInterface* pulseWidthModulationOscillator;
-	AudioSynthNoiseWhiteAdapterInterface* whiteNoiseGenerator;
-	AudioSynthSimpleDrumAdapterInterface* simpleDrum;
-	AudioEffectEnvelopeAdapterInterface* noiseEnvelope;
-	AudioEffectEnvelopeAdapterInterface* toneEnvelope;
-	AudioEffectBitcrusherAdapterInterface* bitcrusherEffect;
-	AudioFilterStateVariableAdapterInterface* filter;
-	AudioMixer4AdapterInterface* prefilterMixer;
-	AudioMixer4AdapterInterface* filterMixer;
-	AudioMixer4AdapterInterface* oscillatorMixer;
+	SineOscillatorAdapterInterface* sineOscillator;
+	FrequencyModulatedSineOscillatorAdapterInterface* fmOscillator;
+	WaveformOscillatorAdapterInterface* waveformOscillator;
+	PulseWidthModulationOscillatorAdapterInterface* pulseWidthModulationOscillator;
+	WhiteNoiseGeneratorAdapterInterface* whiteNoiseGenerator;
+	SimpleDrumAdapterInterface* simpleDrum;
+	EnvelopeEffectAdapterInterface* noiseEnvelope;
+	EnvelopeEffectAdapterInterface* toneEnvelope;
+	BitcrusherEffectAdapterInterface* bitcrusherEffect;
+	StateVariableFilterAdapterInterface* filter;
+	Mixer4AdapterInterface* prefilterMixer;
+	Mixer4AdapterInterface* filterMixer;
+	Mixer4AdapterInterface* oscillatorMixer;
 	AudioOutputI2SAdapterInterface* output;
 
 	void wireUpOscillators(AudioLibraryProviderInterface* libraryProvider);

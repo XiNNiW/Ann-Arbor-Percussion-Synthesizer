@@ -1,15 +1,15 @@
 /*
- * AudioMixer4AdapterInterface.cpp
+ * AudioSynthNoiseWhiteAdapterInterface.cpp
  *
  *  Created on: Mar 3, 2018
  *      Author: xinniw
  */
 
-#include <AudioMixer4AdapterInterface.h>
+#include <WhiteNoiseGeneratorAdapterInterface.h>
 
 namespace AnnArborPercussion {
 
-AudioMixer4AdapterInterface::~AudioMixer4AdapterInterface() {
+WhiteNoiseGeneratorAdapterInterface::~WhiteNoiseGeneratorAdapterInterface() {
 	// TODO Auto-generated destructor stub
 }
 

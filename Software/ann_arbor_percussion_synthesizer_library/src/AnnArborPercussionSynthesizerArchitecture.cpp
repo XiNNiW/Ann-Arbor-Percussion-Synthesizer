@@ -16,11 +16,11 @@ AnnArborPercussionSynthesizerArchitecture::~AnnArborPercussionSynthesizerArchite
 void AnnArborPercussionSynthesizerArchitecture::wireUpOscillators(
 		AudioLibraryProviderInterface* libraryProvider) {
 	libraryProvider->createAudioConnection(this->sineOscillator,
-			OUTPUT_CHANNEL_1, this->oscillatorMixer, input_channel_4);
+			OUTPUT_CHANNEL_1, this->oscillatorMixer, INPUT_CHANNEL_4);
 	libraryProvider->createAudioConnection(this->waveformOscillator,
 			OUTPUT_CHANNEL_1, this->oscillatorMixer, INPUT_CHANNEL_2);
 	libraryProvider->createAudioConnection(this->pulseWidthModulationOscillator,
-			OUTPUT_CHANNEL_1, this->oscillatorMixer, input_channel_3);
+			OUTPUT_CHANNEL_1, this->oscillatorMixer, INPUT_CHANNEL_3);
 	libraryProvider->createAudioConnection(this->simpleDrum, OUTPUT_CHANNEL_1,
 			this->oscillatorMixer, INPUT_CHANNEL_1);
 	libraryProvider->createAudioConnection(this->sineOscillator,
@@ -48,7 +48,7 @@ void AnnArborPercussionSynthesizerArchitecture::wireUpFilter(
 	libraryProvider->createAudioConnection(this->prefilterMixer,
 			OUTPUT_CHANNEL_1, this->filter, INPUT_CHANNEL_1);
 	libraryProvider->createAudioConnection(this->prefilterMixer,
-			OUTPUT_CHANNEL_1, this->filterMixer, input_channel_3);
+			OUTPUT_CHANNEL_1, this->filterMixer, INPUT_CHANNEL_3);
 	libraryProvider->createAudioConnection(this->filter, OUTPUT_CHANNEL_1,
 			this->filterMixer, INPUT_CHANNEL_1);
 	libraryProvider->createAudioConnection(this->filter, OUTPUT_CHANNEL_3,
@@ -85,43 +85,43 @@ AnnArborPercussionSynthesizerArchitecture::AnnArborPercussionSynthesizerArchitec
 	wireUpOutput(libraryProvider);
 }
 
-AudioSynthWaveformSineAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSineOscillator(){
+SineOscillatorAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSineOscillator(){
 	return this->sineOscillator;
 };
-AudioSynthWaveformSineModulatedAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSineFrequencyModulationOscillator(){
+FrequencyModulatedSineOscillatorAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSineFrequencyModulationOscillator(){
 	return this->fmOscillator;
 };
-AudioSynthWaveformAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getWaveformOscillator(){
+WaveformOscillatorAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getWaveformOscillator(){
 	return this->waveformOscillator;
 };
-AudioSynthNoiseWhiteAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getWhiteNoiseGenerator(){
+WhiteNoiseGeneratorAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getWhiteNoiseGenerator(){
 	return this->whiteNoiseGenerator;
 };
-AudioSynthWaveformPWMAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getPulseWidthModulationOscillator(){
+PulseWidthModulationOscillatorAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getPulseWidthModulationOscillator(){
 	return this->pulseWidthModulationOscillator;
 }
-AudioSynthSimpleDrumAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSimpleDrumSynthesizer(){
+SimpleDrumAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getSimpleDrumSynthesizer(){
 	return this->simpleDrum;
 };
-AudioEffectEnvelopeAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getNoiseEnvelope(){
+EnvelopeEffectAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getNoiseEnvelope(){
 	return this->noiseEnvelope;
 };
-AudioEffectEnvelopeAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getToneEnvelope(){
+EnvelopeEffectAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getToneEnvelope(){
 	return this->toneEnvelope;
 };
-AudioFilterStateVariableAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getFilter(){
+StateVariableFilterAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getFilter(){
 	return this->filter;
 }
-AudioEffectBitcrusherAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getBitcrusherEffect(){
+BitcrusherEffectAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getBitcrusherEffect(){
 	return this->bitcrusherEffect;
 };
-AudioMixer4AdapterInterface* AnnArborPercussionSynthesizerArchitecture::getPrefilterMixer(){
+Mixer4AdapterInterface* AnnArborPercussionSynthesizerArchitecture::getPrefilterMixer(){
 	return this->prefilterMixer;
 };
-AudioMixer4AdapterInterface* AnnArborPercussionSynthesizerArchitecture::getFilterMixer(){
+Mixer4AdapterInterface* AnnArborPercussionSynthesizerArchitecture::getFilterMixer(){
 	return this->filterMixer;
 };
-AudioMixer4AdapterInterface* AnnArborPercussionSynthesizerArchitecture::getOscillatorMixer(){
+Mixer4AdapterInterface* AnnArborPercussionSynthesizerArchitecture::getOscillatorMixer(){
 	return this->oscillatorMixer;
 };
 AudioOutputI2SAdapterInterface* AnnArborPercussionSynthesizerArchitecture::getOutput(){
