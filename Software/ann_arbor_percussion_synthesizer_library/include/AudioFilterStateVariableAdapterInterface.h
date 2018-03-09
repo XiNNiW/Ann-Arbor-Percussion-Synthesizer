@@ -12,9 +12,9 @@
 
 namespace AnnArborPercussion {
 
-class AudioFilterStateVariableAdapterInterface : public AudioStreamAdapterInterface {
+class AudioFilterStateVariableAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioFilterStateVariableAdapterInterface(){};
+	virtual ~AudioFilterStateVariableAdapterInterface();
 	virtual void frequency(float freq)=0;
 	virtual void resonance(float q)=0;
 	virtual void octaveControl(float n)=0;
@@ -24,3 +24,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* INCLUDE_AUDIOFILTERSTATEVARIABLEADAPTERINTERFACE_H_ */
+

@@ -11,9 +11,9 @@
 
 namespace AnnArborPercussion {
 
-class AudioOutputI2SAdapterInterface :  public AudioStreamAdapterInterface{
+class AudioOutputI2SAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioOutputI2SAdapterInterface(){};
+	virtual ~AudioOutputI2SAdapterInterface();
 	virtual void update(void)=0;
 	virtual void begin(void)=0;
 };
@@ -21,3 +21,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* AUDIOOUTPUTI2SADAPTERINTERFACE_H_ */
+

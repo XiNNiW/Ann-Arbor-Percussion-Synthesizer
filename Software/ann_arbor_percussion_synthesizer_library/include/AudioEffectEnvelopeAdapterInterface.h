@@ -12,9 +12,9 @@
 
 namespace AnnArborPercussion {
 
-class AudioEffectEnvelopeAdapterInterface : public AudioStreamAdapterInterface {
+class AudioEffectEnvelopeAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioEffectEnvelopeAdapterInterface(){};
+	virtual ~AudioEffectEnvelopeAdapterInterface();
 	virtual void noteOn()=0;
 	virtual void noteOff()=0;
 	virtual void delay(float milliseconds)=0;
@@ -30,3 +30,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* INCLUDE_AUDIOEFFECTENVELOPEADAPTERINTERFACE_H_ */
+

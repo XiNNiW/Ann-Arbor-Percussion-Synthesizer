@@ -14,7 +14,7 @@ namespace AnnArborPercussion {
 
 class AudioConnectionAdapterInterface {
 public:
-	virtual ~AudioConnectionAdapterInterface(){};
+	virtual ~AudioConnectionAdapterInterface();
 	virtual void disconnect(void)=0;
 	virtual void connect(void)=0;
 };
@@ -22,3 +22,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* AUDIOCONNECTIONADAPTERINTERFACE_H_ */
+

@@ -10,9 +10,9 @@
 #include <AudioStreamAdapterInterface.h>
 namespace AnnArborPercussion {
 
-class AudioSynthWaveformSineModulatedAdapterInterface : public AudioStreamAdapterInterface {
+class AudioSynthWaveformSineModulatedAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioSynthWaveformSineModulatedAdapterInterface(){};
+	virtual ~AudioSynthWaveformSineModulatedAdapterInterface();
 	virtual void frequency(float freq)=0;
 	virtual void phase(float angle)=0;
 	virtual void amplitude(float n)=0;
@@ -22,3 +22,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* INCLUDE_AUDIOSYNTHWAVEFORMSINEMODULATEDADAPTERINTERFACE_H_ */
+

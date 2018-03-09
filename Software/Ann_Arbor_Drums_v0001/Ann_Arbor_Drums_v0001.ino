@@ -41,18 +41,18 @@ AudioMixer4              mixer1;         //xy=929.0000686645508,365.999996185302
 AudioFilterStateVariable filter1;        //xy=1077.0000686645508,334.0000190734863
 AudioMixer4              mixer2;         //xy=1221.0001640319824,363.0000801086426
 AudioOutputI2S           i2s1;           //xy=1358.0000648498535,363.0000810623169
-AudioConnection          patchCord1(sine1, pwm1);
-AudioConnection          patchCord2(sine1, sine_fm1);
-AudioConnection          patchCord3(sine_fm1, 0, mixer3, 3);
-AudioConnection          patchCord4(waveform1, 0, mixer3, 1);
-AudioConnection          patchCord5(noise1, envelope2);
-AudioConnection          patchCord6(pwm1, 0, mixer3, 2);
-AudioConnection          patchCord7(drum1, 0, mixer3, 0);
-AudioConnection          patchCord8(mixer3, envelope1);
-AudioConnection          patchCord9(envelope2, 0, mixer1, 1);
-AudioConnection          patchCord10(envelope1, bitcrusher1);
-AudioConnection          patchCord11(bitcrusher1, 0, mixer1, 0);
-AudioConnection          patchCord12(mixer1, 0, filter1, 0);
+AudioConnection          patchCord1(sine1, pwm1);//
+AudioConnection          patchCord2(sine1, sine_fm1);//
+AudioConnection          patchCord3(sine_fm1, 0, mixer3, 3);//
+AudioConnection          patchCord4(waveform1, 0, mixer3, 1);//
+AudioConnection          patchCord5(noise1, envelope2);//
+AudioConnection          patchCord6(pwm1, 0, mixer3, 2);//
+AudioConnection          patchCord7(drum1, 0, mixer3, 0);//
+AudioConnection          patchCord8(mixer3, envelope1);//
+AudioConnection          patchCord9(envelope2, 0, mixer1, 1);//
+AudioConnection          patchCord10(envelope1, bitcrusher1);//
+AudioConnection          patchCord11(bitcrusher1, 0, mixer1, 0);//
+AudioConnection          patchCord12(mixer1, 0, filter1, 0);//
 AudioConnection          patchCord13(mixer1, 0, mixer2, 2);
 AudioConnection          patchCord14(filter1, 0, mixer2, 0);
 AudioConnection          patchCord15(filter1, 2, mixer2, 1);

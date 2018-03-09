@@ -12,9 +12,9 @@
 
 namespace AnnArborPercussion {
 
-class AudioMixer4AdapterInterface : public AudioStreamAdapterInterface {
+class AudioMixer4AdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioMixer4AdapterInterface(){};
+	virtual ~AudioMixer4AdapterInterface();
 	virtual void update(void)=0;
 	virtual void gain(unsigned int channel, float gain)=0;
 };
@@ -22,3 +22,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* INCLUDE_AUDIOMIXER4ADAPTERINTERFACE_H_ */
+

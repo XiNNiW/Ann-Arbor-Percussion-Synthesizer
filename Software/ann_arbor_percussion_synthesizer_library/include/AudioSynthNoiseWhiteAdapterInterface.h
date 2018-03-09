@@ -12,9 +12,9 @@
 
 namespace AnnArborPercussion {
 
-class AudioSynthNoiseWhiteAdapterInterface :  public AudioStreamAdapterInterface {
+class AudioSynthNoiseWhiteAdapterInterface: public AudioStreamAdapterInterface {
 public:
-	virtual ~AudioSynthNoiseWhiteAdapterInterface(){};
+	virtual ~AudioSynthNoiseWhiteAdapterInterface();
 	virtual void amplitude(float n)=0;
 	virtual void update(void)=0;
 };
@@ -22,3 +22,4 @@ public:
 } /* namespace AnnArborPercussion */
 
 #endif /* INCLUDE_AUDIOSYNTHNOISEWHITEADAPTERINTERFACE_H_ */
+
