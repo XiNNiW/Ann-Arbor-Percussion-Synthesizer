@@ -25,11 +25,6 @@ class MockEnvelopeEffect : public EnvelopeEffectAdapterInterface {
 	MOCK_METHOD1(release,void(float milliseconds));
 	MOCK_METHOD1(releaseNoteOn,void(float milliseconds));
 
-	MOCK_METHOD0(processorUsage,int(void));
-	MOCK_METHOD0(processorUsageMax,int(void));
-	MOCK_METHOD0(processorUsageMaxReset,void(void));
-	MOCK_METHOD0(isActive,bool(void));
-	MOCK_METHOD0(update,void(void));
 };
 
 #endif /* SRC_MOCKENVELOPEEFFECT_H_ */

@@ -24,7 +24,6 @@ public:
 	virtual void sustain(float level)=0;
 	virtual void release(float milliseconds)=0;
 	virtual void releaseNoteOn(float milliseconds)=0;
-	virtual void update(void)=0;
 };
 
 } /* namespace AnnArborPercussion */

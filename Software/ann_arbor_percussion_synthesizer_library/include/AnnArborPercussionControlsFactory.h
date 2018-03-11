@@ -23,6 +23,7 @@ namespace AnnArborPercussion{
 		KnobInterface* createFrequencyKnob(PlatformProviderInterface* platformProvider);
 		KnobInterface* createTeethKnob(PlatformProviderInterface* platformProvider);
 		KnobInterface* createModKnob(PlatformProviderInterface* platformProvider);
+		//createDrumTrigger (platformProvider)
 	};
 
 }

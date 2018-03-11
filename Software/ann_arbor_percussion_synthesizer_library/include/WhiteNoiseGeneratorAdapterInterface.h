@@ -16,7 +16,6 @@ class WhiteNoiseGeneratorAdapterInterface: public AudioStreamAdapterInterface {
 public:
 	virtual ~WhiteNoiseGeneratorAdapterInterface();
 	virtual void amplitude(float n)=0;
-	virtual void update(void)=0;
 };
 
 } /* namespace AnnArborPercussion */

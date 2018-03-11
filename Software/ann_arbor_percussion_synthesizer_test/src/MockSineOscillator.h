@@ -20,11 +20,6 @@ class MockSineOscillator : public SineOscillatorAdapterInterface {
 	MOCK_METHOD1(amplitude,void(float n));
 	MOCK_METHOD0(update,void(void));
 
-	MOCK_METHOD0(processorUsage,int(void));
-	MOCK_METHOD0(processorUsageMax,int(void));
-	MOCK_METHOD0(processorUsageMaxReset,void(void));
-	MOCK_METHOD0(isActive,bool(void));
-
 };
 
 #endif /* SRC_MOCKSINEOSCILLATOR_H_ */

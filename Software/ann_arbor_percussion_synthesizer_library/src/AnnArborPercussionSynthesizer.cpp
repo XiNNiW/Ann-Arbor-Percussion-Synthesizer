@@ -9,7 +9,11 @@
 
 namespace AnnArborPercussion{
 
-	AnnArborPercussionSynthesizer::AnnArborPercussionSynthesizer(PlatformProviderInterface* platformProvider, AnnArborPercussionControlsFactoryInterface* controlsFactory) {
+	AnnArborPercussionSynthesizer::~AnnArborPercussionSynthesizer() {}
+
+	AnnArborPercussionSynthesizer::AnnArborPercussionSynthesizer(PlatformProviderInterface* platformProvider,
+			AnnArborPercussionControlsFactoryInterface* controlsFactory,
+			AnnArborPercussionSynthesizerArchitectureInterface* synthesizerArchitecture) {
 
 		this->drumLengthKnob = controlsFactory->createLengthKnob(platformProvider);
 		this->drumMotionKnob = controlsFactory->createMotionKnob(platformProvider);
@@ -18,9 +22,6 @@ namespace AnnArborPercussion{
 		this->drumTeethKnob = controlsFactory->createTeethKnob(platformProvider);
 
 	}
-
-	AnnArborPercussionSynthesizer::~AnnArborPercussionSynthesizer() {}
-
 
 	int AnnArborPercussionSynthesizer::getDrumLength(){
 		return this->drumLengthKnob->getValue();

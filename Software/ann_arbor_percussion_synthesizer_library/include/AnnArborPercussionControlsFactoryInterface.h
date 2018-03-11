@@ -20,6 +20,7 @@ namespace AnnArborPercussion{
 		virtual KnobInterface* createFrequencyKnob(PlatformProviderInterface* platformProvider)=0;
 		virtual KnobInterface* createTeethKnob(PlatformProviderInterface* platformProvider)=0;
 		virtual KnobInterface* createModKnob(PlatformProviderInterface* platformProvider)=0;
+		//TriggerInterface* createDrumTrigger(platformProvider) //creates concrete CVTrigger
 	};
 
 }

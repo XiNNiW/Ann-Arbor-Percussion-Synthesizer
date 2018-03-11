@@ -15,7 +15,6 @@ namespace AnnArborPercussion {
 class Mixer4AdapterInterface: public AudioStreamAdapterInterface {
 public:
 	virtual ~Mixer4AdapterInterface();
-	virtual void update(void)=0;
 	virtual void gain(unsigned int channel, float gain)=0;
 };
 

@@ -18,7 +18,6 @@ public:
 	virtual void frequency(float freq)=0;
 	virtual void resonance(float q)=0;
 	virtual void octaveControl(float n)=0;
-	virtual void update(void)=0;
 };
 
 } /* namespace AnnArborPercussion */

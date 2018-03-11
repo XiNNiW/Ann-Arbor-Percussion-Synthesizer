@@ -16,7 +16,6 @@ public:
 	virtual void frequency(float freq)=0;
 	virtual void phase(float angle)=0;
 	virtual void amplitude(float n)=0;
-	virtual void update(void)=0;
 };
 
 } /* namespace AnnArborPercussion */

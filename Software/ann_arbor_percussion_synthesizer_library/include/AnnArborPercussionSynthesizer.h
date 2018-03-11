@@ -10,13 +10,16 @@
 
 #include <PlatformProviderInterface.h>
 #include <AnnArborPercussionControlsFactoryInterface.h>
+#include <AnnArborPercussionSynthesizerArchitecture.h>
 #include <KnobInterface.h>
 
 namespace AnnArborPercussion{
 
 	class AnnArborPercussionSynthesizer {
 	public:
-		AnnArborPercussionSynthesizer(PlatformProviderInterface* platformProvider, AnnArborPercussionControlsFactoryInterface* controlsFactory);
+		AnnArborPercussionSynthesizer(PlatformProviderInterface* platformProvider,
+				AnnArborPercussionControlsFactoryInterface* controlsFactory,
+				AnnArborPercussionSynthesizerArchitectureInterface* synthesizerArchitecture);
 		virtual ~AnnArborPercussionSynthesizer();
 		int getDrumLength();
 		int getDrumMotion();

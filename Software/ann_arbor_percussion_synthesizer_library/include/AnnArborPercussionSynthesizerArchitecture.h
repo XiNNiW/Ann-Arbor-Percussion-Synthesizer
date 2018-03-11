@@ -9,27 +9,28 @@
 #define INCLUDE_ANNARBORPERCUSSIONSYNTHESIZERARCHITECTURE_H_
 
 #include <AudioLibraryProviderInterface.h>
+#include <AnnArborPercussionSynthesizerArchitectureInterface.h>
 
 namespace AnnArborPercussion {
 
-class AnnArborPercussionSynthesizerArchitecture {
+class AnnArborPercussionSynthesizerArchitecture : public AnnArborPercussionSynthesizerArchitectureInterface {
 public:
 	virtual ~AnnArborPercussionSynthesizerArchitecture();
 	AnnArborPercussionSynthesizerArchitecture(AudioLibraryProviderInterface* libraryProvider);
-	SineOscillatorAdapterInterface* getSineOscillator();
-	FrequencyModulatedSineOscillatorAdapterInterface* getSineFrequencyModulationOscillator();
-	WaveformOscillatorAdapterInterface* getWaveformOscillator();
-	PulseWidthModulationOscillatorAdapterInterface* getPulseWidthModulationOscillator();
-	WhiteNoiseGeneratorAdapterInterface* getWhiteNoiseGenerator();
-	SimpleDrumAdapterInterface* getSimpleDrumSynthesizer();
-	EnvelopeEffectAdapterInterface* getNoiseEnvelope();
-	EnvelopeEffectAdapterInterface* getToneEnvelope();
-	BitcrusherEffectAdapterInterface* getBitcrusherEffect();
-	StateVariableFilterAdapterInterface* getFilter();
-	Mixer4AdapterInterface* getPrefilterMixer();
-	Mixer4AdapterInterface* getFilterMixer();
-	Mixer4AdapterInterface* getOscillatorMixer();
-	AudioOutputI2SAdapterInterface* getOutput();
+	virtual SineOscillatorAdapterInterface* getSineOscillator();
+	virtual FrequencyModulatedSineOscillatorAdapterInterface* getSineFrequencyModulationOscillator();
+	virtual WaveformOscillatorAdapterInterface* getWaveformOscillator();
+	virtual PulseWidthModulationOscillatorAdapterInterface* getPulseWidthModulationOscillator();
+	virtual WhiteNoiseGeneratorAdapterInterface* getWhiteNoiseGenerator();
+	virtual SimpleDrumAdapterInterface* getSimpleDrumSynthesizer();
+	virtual EnvelopeEffectAdapterInterface* getNoiseEnvelope();
+	virtual EnvelopeEffectAdapterInterface* getToneEnvelope();
+	virtual BitcrusherEffectAdapterInterface* getBitcrusherEffect();
+	virtual StateVariableFilterAdapterInterface* getFilter();
+	virtual Mixer4AdapterInterface* getPrefilterMixer();
+	virtual Mixer4AdapterInterface* getFilterMixer();
+	virtual Mixer4AdapterInterface* getOscillatorMixer();
+	virtual AudioOutputI2SAdapterInterface* getOutput();
 
 private:
 	static const int OUTPUT_CHANNEL_1 = 0;

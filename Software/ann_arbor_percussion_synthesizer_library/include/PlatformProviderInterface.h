@@ -14,6 +14,7 @@ class PlatformProviderInterface {
 public:
 	virtual ~PlatformProviderInterface(){};
 	virtual KnobInterface* createKnob(int knobNumber, int minValue, int maxValue)=0;
+	// TriggerInterface* createDrumTrigger (int triggerNumber)
 };
 
 

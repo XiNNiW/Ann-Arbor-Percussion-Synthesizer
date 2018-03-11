@@ -22,8 +22,7 @@ public:
 	virtual void pulseWidth(float n)=0;
 	virtual void begin(short t_type)=0;
 	virtual void begin(float t_amp, float t_freq, short t_type)=0;
-	virtual void arbitraryWaveform(const int *data, float maxFreq)=0;
-	virtual void update()=0;
+	virtual void arbitraryWaveform(const short int *data, float maxFreq)=0;
 
 };
 

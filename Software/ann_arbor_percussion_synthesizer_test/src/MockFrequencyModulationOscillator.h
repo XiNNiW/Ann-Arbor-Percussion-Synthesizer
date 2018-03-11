@@ -17,12 +17,7 @@ class MockFrequencyModulationOscillator: public FrequencyModulatedSineOscillator
 	MOCK_METHOD1(frequency,void(float freq));
 	MOCK_METHOD1(phase,void(float angle));
 	MOCK_METHOD1(amplitude,void(float n));
-	MOCK_METHOD0(update,void(void));
 
-	MOCK_METHOD0(processorUsage,int(void));
-	MOCK_METHOD0(processorUsageMax,int(void));
-	MOCK_METHOD0(processorUsageMaxReset,void(void));
-	MOCK_METHOD0(isActive,bool(void));
 };
 
 #endif /* SRC_MOCKFREQUENCYMODULATIONOSCILLATOR_H_ */

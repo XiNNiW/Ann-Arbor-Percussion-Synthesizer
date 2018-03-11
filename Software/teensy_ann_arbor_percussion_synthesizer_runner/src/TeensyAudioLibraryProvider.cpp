@@ -6,6 +6,18 @@
  */
 
 #include <TeensyAudioLibraryProvider.h>
+#include <TeensyAudioOutputI2S.h>
+#include <TeensyAudioConnection.h>
+#include <TeensyAudioMixer4.h>
+#include <TeensyWhiteNoiseGenerator.h>
+#include <TeensySimpleDrum.h>
+#include <TeensyWaveformOscillator.h>
+#include <TeensySineOscillator.h>
+#include <TeensyFrequencyModulatedSineOscillator.h>
+#include <TeensyPulseWidthModulationOscillator.h>
+#include <TeensyStateVariableFilter.h>
+#include <TeensyEnvelopeEffect.h>
+#include <TeensyBitcrusherEffect.h>
 #include <Audio.h>
 
 namespace AnnArborPercussion {
@@ -20,48 +32,63 @@ TeensyAudioLibraryProvider::~TeensyAudioLibraryProvider() {
 }
 
 AudioOutputI2SAdapterInterface* TeensyAudioLibraryProvider::createOutput(){
-	return new AudioOutputI2S();
+	using AnnArborPercussion::TeensyAudioOutputI2S;
+	return new TeensyAudioOutputI2S();
 };
+
 AudioConnectionAdapterInterface* TeensyAudioLibraryProvider::createAudioConnection(
 		AudioStreamAdapterInterface* source,
 		AudioStreamAdapterInterface* destination){
-	return new AudioConnection(source,destination);
+	using AnnArborPercussion::TeensyAudioConnection;
+	return new TeensyAudioConnection(source,destination);
+
 };
 AudioConnectionAdapterInterface* TeensyAudioLibraryProvider::createAudioConnection(
 		AudioStreamAdapterInterface* source, unsigned char sourceOutput,
 		AudioStreamAdapterInterface* destination,
 		unsigned char destinationInput){
-	return new AudioConnection(source,sourceOutput,destination,destinationInput);
+	using AnnArborPercussion::TeensyAudioConnection;
+	return new TeensyAudioConnection(source,sourceOutput,destination,destinationInput);
 };
 Mixer4AdapterInterface* TeensyAudioLibraryProvider::create4ChannelMixer(){
-	return new AudioMixer4();
+	using AnnArborPercussion::TeensyAudioMixer4;
+	return new TeensyAudioMixer4();
 };
 WhiteNoiseGeneratorAdapterInterface* TeensyAudioLibraryProvider::createWhiteNoiseSynth(){
-	return new AudioSynthNoiseWhite();
+	using AnnArborPercussion::TeensyWhiteNoiseGenerator;
+	return new TeensyWhiteNoiseGenerator();
 };
 SimpleDrumAdapterInterface* TeensyAudioLibraryProvider::createSimpleDrum(){
-	return new AudioSynthSimpleDrum();
+	using AnnArborPercussion::TeensySimpleDrum;
+	return new TeensySimpleDrum();
 };
 WaveformOscillatorAdapterInterface* TeensyAudioLibraryProvider::createWaveformSynth(){
-	return new AudioSynthWaveformSine();
+	using AnnArborPercussion::TeensyWaveformOscillator;
+	return new TeensyWaveformOscillator();
 };
 SineOscillatorAdapterInterface* TeensyAudioLibraryProvider::createSineWaveformSynth(){
-	return new AudioSynthWaveformSine();
+	using AnnArborPercussion::TeensySineOscillator;
+	return new TeensySineOscillator();
 };
 FrequencyModulatedSineOscillatorAdapterInterface* TeensyAudioLibraryProvider::createModulatedSineWaveformSynth(){
-	return new AudioSynthWaveformSineModulated();
+	using AnnArborPercussion::TeensyFrequencyModulatedSineOscillator;
+	return new TeensyFrequencyModulatedSineOscillator();
 };
 PulseWidthModulationOscillatorAdapterInterface* TeensyAudioLibraryProvider::createPWMWaveformSynth(){
-	return new AudioSynthWaveformPWM();
+	using AnnArborPercussion::TeensyPulseWidthModulationOscillator;
+	return new TeensyPulseWidthModulationOscillator();
 };
 StateVariableFilterAdapterInterface* TeensyAudioLibraryProvider::createStateVariableFilter(){
-	return new AudioFilterStateVariable();
+	using AnnArborPercussion::TeensyStateVariableFilter;
+	return new TeensyStateVariableFilter();
 };
 EnvelopeEffectAdapterInterface* TeensyAudioLibraryProvider::createEnvelopeEffect(){
-	return new AudioEffectEnvelope();
+	using AnnArborPercussion::TeensyEnvelopeEffect;
+	return new TeensyEnvelopeEffect();
 };
 BitcrusherEffectAdapterInterface* TeensyAudioLibraryProvider::createBitcrusherEffect(){
-	return new AudioEffectBitcrusher();
+	using AnnArborPercussion::TeensyBitcrusherEffect;
+	return new TeensyBitcrusherEffect();
 };
 
 } /* namespace AnnArborPercussion */

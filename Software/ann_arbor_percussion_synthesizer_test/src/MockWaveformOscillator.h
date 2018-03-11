@@ -22,13 +22,8 @@ class MockWaveformOscillator: public WaveformOscillatorAdapterInterface {
 	MOCK_METHOD1(pulseWidth,void(float n));
 	MOCK_METHOD1(begin,void(short t_type));
 	MOCK_METHOD3(begin,void(float t_amp, float t_freq, short t_type));
-	MOCK_METHOD2(arbitraryWaveform,void(const int *data, float maxFreq));
+	MOCK_METHOD2(arbitraryWaveform,void(const short int *data, float maxFreq));
 
-	MOCK_METHOD0(processorUsage,int(void));
-	MOCK_METHOD0(processorUsageMax,int(void));
-	MOCK_METHOD0(processorUsageMaxReset,void(void));
-	MOCK_METHOD0(isActive,bool(void));
-	MOCK_METHOD0(update,void(void));
 
 };
 

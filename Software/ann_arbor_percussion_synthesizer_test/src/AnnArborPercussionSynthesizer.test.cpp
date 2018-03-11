@@ -9,16 +9,21 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include <AnnArborPercussionSynthesizer.h>
+#include "MockAnnArborPercussionSynthesizerArchitecture.h"
 #include "MockAnnArborPercussionControlsFactory.h"
 #include "MockPlatformProvider.h"
 #include "MockKnob.h"
 
+
 using AnnArborPercussion::AnnArborPercussionSynthesizer;
+using AnnArborPercussion::AnnArborPercussionSynthesizerArchitecture;
+using AnnArborPercussion::AudioLibraryProviderInterface;
 
 TEST(AnnArborPercussionSynthesizerTest, should_get_synth_parameters_from_knobs) {
 
 	MockPlatformProvider mockProvider;
 	MockAnnArborPercussionControlsFactory mockControlsFactory;
+	MockAnnArborPercussionSynthesizerArchitecture mockSynthesizerArchitecture;
 
 	MockKnob mockLengthKnob;
 	MockKnob mockMotionKnob;
@@ -33,7 +38,7 @@ TEST(AnnArborPercussionSynthesizerTest, should_get_synth_parameters_from_knobs) 
 	EXPECT_CALL(mockControlsFactory,createTeethKnob(&mockProvider)).Times(1).WillOnce(testing::Return(&mockTeethKnob));
 
 	AnnArborPercussionSynthesizer* a2Synth =
-			new AnnArborPercussionSynthesizer(&mockProvider,&mockControlsFactory);
+			new AnnArborPercussionSynthesizer(&mockProvider,&mockControlsFactory,&mockSynthesizerArchitecture);
 
 	int expectedDrumWidth = 5;
 	EXPECT_CALL(mockLengthKnob, getValue()).Times(1).WillOnce(testing::Return(expectedDrumWidth));
