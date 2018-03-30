@@ -9,19 +9,21 @@
 #define SRC_TEENSYSINEOSCILLATOR_H_
 
 #include <SineOscillatorAdapterInterface.h>
+#include <TeensyAudioStream.h>
 #include <Audio.h>
 
 namespace AnnArborPercussion {
 
-class TeensySineOscillator: public SineOscillatorAdapterInterface {
+class TeensySineOscillator: public SineOscillatorAdapterInterface, public TeensyAudioStream {
 public:
 	TeensySineOscillator();
 	virtual ~TeensySineOscillator();
 	void frequency(float freq);
 	void phase(float angle);
 	void amplitude(float n);
+	AudioStream* getStream();
 private:
-	AudioSynthWaveformSine* oscillator;
+	AudioSynthWaveformSine oscillator;
 };
 
 } /* namespace AnnArborPercussion */

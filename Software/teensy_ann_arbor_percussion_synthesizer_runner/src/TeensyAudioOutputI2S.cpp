@@ -13,11 +13,15 @@ TeensyAudioOutputI2S::~TeensyAudioOutputI2S() {
 }
 
 TeensyAudioOutputI2S::TeensyAudioOutputI2S() {
-	this->output=new AudioOutputI2S();
+//	this->output=new AudioOutputI2S();
 }
 
 void TeensyAudioOutputI2S::begin(){
-	this->output->begin();
+	this->output.begin();
+}
+
+AudioStream* TeensyAudioOutputI2S::getStream(){
+	return &this->output;
 }
 
 } /* namespace AnnArborPercussion */

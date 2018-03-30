@@ -9,17 +9,19 @@
 #define SRC_TEENSYWHITENOISEGENERATOR_H_
 
 #include <WhiteNoiseGeneratorAdapterInterface.h>
+#include <TeensyAudioStream.h>
 #include <Audio.h>
 
 namespace AnnArborPercussion {
 
-class TeensyWhiteNoiseGenerator: public WhiteNoiseGeneratorAdapterInterface {
+class TeensyWhiteNoiseGenerator: public WhiteNoiseGeneratorAdapterInterface, public TeensyAudioStream {
 public:
 	TeensyWhiteNoiseGenerator();
 	virtual ~TeensyWhiteNoiseGenerator();
 	void amplitude(float level);
+	AudioStream* getStream();
 private:
-	AudioSynthNoiseWhite* whiteNoiseGenerator;
+	AudioSynthNoiseWhite whiteNoiseGenerator;
 };
 
 } /* namespace AnnArborPercussion */

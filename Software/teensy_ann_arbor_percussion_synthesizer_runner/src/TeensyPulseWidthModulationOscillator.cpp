@@ -10,20 +10,24 @@
 namespace AnnArborPercussion {
 
 TeensyPulseWidthModulationOscillator::TeensyPulseWidthModulationOscillator() {
-	this->oscillator=new AudioSynthWaveformPWM();
-
+//	this->oscillator= new AudioSynthWaveformPWM();
 }
 
 TeensyPulseWidthModulationOscillator::~TeensyPulseWidthModulationOscillator() {
 	// TODO Auto-generated destructor stub
+	//delete this->oscillator;
 }
 
 void TeensyPulseWidthModulationOscillator::frequency(float freq){
-	this->oscillator->frequency(freq);
+	oscillator.frequency(freq);
 };
 void TeensyPulseWidthModulationOscillator::amplitude(float level){
-	this->oscillator->amplitude(level);
+	oscillator.amplitude(level);
 };
+
+AudioStream* TeensyPulseWidthModulationOscillator::getStream(){
+	return &oscillator;
+}
 
 
 

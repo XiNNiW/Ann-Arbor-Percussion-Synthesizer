@@ -10,7 +10,7 @@
 namespace AnnArborPercussion {
 
 TeensyFrequencyModulatedSineOscillator::TeensyFrequencyModulatedSineOscillator() {
-	this->oscillator=new AudioSynthWaveformSineModulated();
+//	this->oscillator=new AudioSynthWaveformSineModulated();
 }
 
 TeensyFrequencyModulatedSineOscillator::~TeensyFrequencyModulatedSineOscillator() {
@@ -18,13 +18,18 @@ TeensyFrequencyModulatedSineOscillator::~TeensyFrequencyModulatedSineOscillator(
 }
 
 void TeensyFrequencyModulatedSineOscillator::frequency(float freq){
-	this->oscillator->frequency(freq);
+	this->oscillator.frequency(freq);
 };
 void TeensyFrequencyModulatedSineOscillator::phase(float angle){
-	this->oscillator->phase(angle);
+	this->oscillator.phase(angle);
 };
 void TeensyFrequencyModulatedSineOscillator::amplitude(float level){
-	this->oscillator->amplitude(level);
+	this->oscillator.amplitude(level);
 };
+
+AudioStream* TeensyFrequencyModulatedSineOscillator::getStream(){
+	return &this->oscillator;
+}
+
 
 } /* namespace AnnArborPercussion */

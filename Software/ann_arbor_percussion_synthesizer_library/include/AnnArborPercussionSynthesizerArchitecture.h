@@ -41,6 +41,24 @@ private:
 	static const int INPUT_CHANNEL_3 = 2;
 	static const int INPUT_CHANNEL_4 = 3;
 
+	AudioConnectionAdapterInterface* patchCable1;
+	AudioConnectionAdapterInterface* patchCable2;
+	AudioConnectionAdapterInterface* patchCable3;
+	AudioConnectionAdapterInterface* patchCable4;
+	AudioConnectionAdapterInterface* patchCable5;
+	AudioConnectionAdapterInterface* patchCable6;
+	AudioConnectionAdapterInterface* patchCable7;
+	AudioConnectionAdapterInterface* patchCable8;
+	AudioConnectionAdapterInterface* patchCable9;
+	AudioConnectionAdapterInterface* patchCable10;
+	AudioConnectionAdapterInterface* patchCable11;
+	AudioConnectionAdapterInterface* patchCable12;
+	AudioConnectionAdapterInterface* patchCable13;
+	AudioConnectionAdapterInterface* patchCable14;
+	AudioConnectionAdapterInterface* patchCable15;
+	AudioConnectionAdapterInterface* patchCable16;
+	AudioConnectionAdapterInterface* patchCable17;
+
 	SineOscillatorAdapterInterface* sineOscillator;
 	FrequencyModulatedSineOscillatorAdapterInterface* fmOscillator;
 	WaveformOscillatorAdapterInterface* waveformOscillator;

@@ -10,7 +10,7 @@
 namespace AnnArborPercussion {
 
 TeensyWhiteNoiseGenerator::TeensyWhiteNoiseGenerator() {
-	this->whiteNoiseGenerator=new AudioSynthNoiseWhite();
+//	this->whiteNoiseGenerator=new AudioSynthNoiseWhite();
 }
 
 TeensyWhiteNoiseGenerator::~TeensyWhiteNoiseGenerator() {
@@ -18,7 +18,11 @@ TeensyWhiteNoiseGenerator::~TeensyWhiteNoiseGenerator() {
 }
 
 void TeensyWhiteNoiseGenerator::amplitude(float level){
-	this->whiteNoiseGenerator->amplitude(level);
+	this->whiteNoiseGenerator.amplitude(level);
 };
+
+AudioStream* TeensyWhiteNoiseGenerator::getStream(){
+	return &this->whiteNoiseGenerator;
+}
 
 } /* namespace AnnArborPercussion */

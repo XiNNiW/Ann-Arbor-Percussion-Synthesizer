@@ -9,11 +9,12 @@
 #define SRC_TEENSYSIMPLEDRUM_H_
 
 #include <SimpleDrumAdapterInterface.h>
+#include <TeensyAudioStream.h>
 #include <Audio.h>
 
 namespace AnnArborPercussion {
 
-class TeensySimpleDrum: public SimpleDrumAdapterInterface {
+class TeensySimpleDrum: public SimpleDrumAdapterInterface, public TeensyAudioStream {
 public:
 	TeensySimpleDrum();
 	virtual ~TeensySimpleDrum();
@@ -22,8 +23,9 @@ public:
 	void length(int milliseconds); //int32_t
 	void secondMix(float level);
 	void pitchMod(float depth);
+	AudioStream* getStream();
 private:
-	AudioSynthSimpleDrum* drum;
+	AudioSynthSimpleDrum drum;
 };
 
 } /* namespace AnnArborPercussion */

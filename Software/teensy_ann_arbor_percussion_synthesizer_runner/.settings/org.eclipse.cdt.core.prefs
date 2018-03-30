@@ -124,13 +124,13 @@ environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.ESP826
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.ESP8266.NETWORK.UPLOAD.TOOL/value=esp8266OTA
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.DTS/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.DTS/operation=replace
-environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.DTS/value=0
+environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.DTS/value=3600
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.LOCAL/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.LOCAL/operation=replace
-environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.LOCAL/value=1518955374
+environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.LOCAL/value=1521308416
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.UTC/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.UTC/operation=replace
-environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.UTC/value=1518973374
+environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.UTC/value=1521322816
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.ZONE/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.ZONE/operation=replace
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.EXTRA.TIME.ZONE/value=-18000
@@ -178,7 +178,7 @@ environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.AR.PATTERN/value="${A.COMPILER.PATH}${A.BUILD.TOOLCHAIN}${A.BUILD.COMMAND.AR}" rcs "${A.ARCHIVE_FILE_PATH}" "${A.OBJECT_FILE}"
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.1/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.1/operation=replace
-environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.1/value="/home/xinniw/arduino-1.8.5/hardware/teensy/../tools/arm/bin/arm-none-eabi-gcc" -O1 -Wl,--gc-sections,--relax,--defsym\=__rtc_localtime\=1518955374 "-T/home/xinniw/arduino-1.8.5/hardware/teensy/avr/cores/teensy3/mk20dx256.ld" -lstdc++ -mthumb -mcpu\=cortex-m4 -fsingle-precision-constant -o "/home/xinniw/Development/NCMC/Ann-Arbor-Percussion-Synthesizer/Software/teensy_ann_arbor_percussion_synthesizer_runner/Release/teensy_ann_arbor_percussion_synthesizer_runner.elf" 
+environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.1/value="/home/xinniw/arduino-1.8.5/hardware/teensy/../tools/arm/bin/arm-none-eabi-gcc" -O1 -Wl,--gc-sections,--relax,--defsym\=__rtc_localtime\=1521308416 "-T/home/xinniw/arduino-1.8.5/hardware/teensy/avr/cores/teensy3/mk20dx256.ld" -lstdc++ -mthumb -mcpu\=cortex-m4 -fsingle-precision-constant -o "/home/xinniw/Development/NCMC/Ann-Arbor-Percussion-Synthesizer/Software/teensy_ann_arbor_percussion_synthesizer_runner/Release/teensy_ann_arbor_percussion_synthesizer_runner.elf" 
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.2/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.2/operation=replace
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/A.RECIPE.C.COMBINE.PATTERN.2/value=\ 
@@ -421,7 +421,7 @@ environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.B
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.BOARD_NAME/value=Teensy 3.2 / 3.1
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.COM_PORT/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.COM_PORT/operation=replace
-environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.COM_PORT/value=/dev/cu.usbmodem621
+environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.COM_PORT/value=COM1
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.ECLIPSE_LOCATION/delimiter=\:
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.ECLIPSE_LOCATION/operation=replace
 environment/project/it.baeyens.arduino.core.toolChain.release.504661961/JANTJE.ECLIPSE_LOCATION/value=

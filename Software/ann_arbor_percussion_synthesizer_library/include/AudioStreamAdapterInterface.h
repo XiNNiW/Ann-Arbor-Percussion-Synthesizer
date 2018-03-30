@@ -14,7 +14,6 @@ namespace AnnArborPercussion {
 class AudioStreamAdapterInterface {
 public:
 	virtual ~AudioStreamAdapterInterface()=0;
-//	virtual AudioConnectionAdapterInterface* connectTo(AudioStreamAdapterInterface* destination);
 };
 
 } /* namespace AnnArborPercussion */

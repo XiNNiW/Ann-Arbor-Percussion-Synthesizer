@@ -15,12 +15,16 @@ TeensyAudioMixer4::~TeensyAudioMixer4() {
 }
 
 TeensyAudioMixer4::TeensyAudioMixer4() {
-	this->mixer=new AudioMixer4();
+//	this->mixer=new AudioMixer4();
 }
 
 void TeensyAudioMixer4::gain(unsigned int channel, float gain){
-	this->mixer->gain(channel,gain);
+	this->mixer.gain(channel,gain);
 };
+
+AudioStream* TeensyAudioMixer4::getStream(){
+	return &this->mixer;
+}
 
 
 } /* namespace AnnArborPercussion */

@@ -16,7 +16,7 @@ namespace AnnArborPercussion {
 class TeensyAudioConnection: public AudioConnectionAdapterInterface {
 public:
 	TeensyAudioConnection(AudioStreamAdapterInterface* source, AudioStreamAdapterInterface* destination);
-	TeensyAudioConnection(AudioStreamAdapterInterface* source, int outputChannel, AudioStreamAdapterInterface* destination, int inputChannel);
+	TeensyAudioConnection(AudioStreamAdapterInterface* source, unsigned char outputChannel, AudioStreamAdapterInterface* destination, unsigned char inputChannel);
 	virtual ~TeensyAudioConnection();
 	virtual void connect(void);
 	virtual void disconnect(void);

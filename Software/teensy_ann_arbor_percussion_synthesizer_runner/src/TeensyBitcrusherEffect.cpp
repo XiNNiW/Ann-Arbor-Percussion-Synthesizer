@@ -10,7 +10,7 @@
 namespace AnnArborPercussion {
 
 TeensyBitcrusherEffect::TeensyBitcrusherEffect() {
-	this->bitcrusher=new AudioEffectBitcrusher();
+//	this->bitcrusher=new AudioEffectBitcrusher();
 }
 
 TeensyBitcrusherEffect::~TeensyBitcrusherEffect() {
@@ -18,10 +18,14 @@ TeensyBitcrusherEffect::~TeensyBitcrusherEffect() {
 }
 
 void TeensyBitcrusherEffect::bits(unsigned int b){
-	this->bitcrusher->bits(b);
+	this->bitcrusher.bits(b);
 }; //uint8_t
 void TeensyBitcrusherEffect::sampleRate(float hz){
-	this->bitcrusher->sampleRate(hz);
+	this->bitcrusher.sampleRate(hz);
 };
+
+AudioStream* TeensyBitcrusherEffect::getStream(){
+	return &this->bitcrusher;
+}
 
 } /* namespace AnnArborPercussion */

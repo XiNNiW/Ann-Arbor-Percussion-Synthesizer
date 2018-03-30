@@ -9,11 +9,12 @@
 #define SRC_TEENSYENVELOPEEFFECT_H_
 
 #include <EnvelopeEffectAdapterInterface.h>
+#include <TeensyAudioStream.h>
 #include <Audio.h>
 
 namespace AnnArborPercussion {
 
-class TeensyEnvelopeEffect: public EnvelopeEffectAdapterInterface {
+class TeensyEnvelopeEffect: public EnvelopeEffectAdapterInterface, public TeensyAudioStream {
 public:
 	TeensyEnvelopeEffect();
 	virtual ~TeensyEnvelopeEffect();
@@ -26,8 +27,9 @@ public:
 	void sustain(float level);
 	void release(float milliseconds);
 	void releaseNoteOn(float milliseconds);
+	AudioStream* getStream();
 private:
-	AudioEffectEnvelope* envelope;
+	AudioEffectEnvelope envelope;
 
 };
 

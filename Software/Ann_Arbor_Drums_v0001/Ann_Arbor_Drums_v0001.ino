@@ -40,7 +40,7 @@ AudioEffectBitcrusher    bitcrusher1;    //xy=771.0001831054688,347.000026702880
 AudioMixer4              mixer1;         //xy=929.0000686645508,365.99999618530273
 AudioFilterStateVariable filter1;        //xy=1077.0000686645508,334.0000190734863
 AudioMixer4              mixer2;         //xy=1221.0001640319824,363.0000801086426
-AudioOutputI2S           i2s1;           //xy=1358.0000648498535,363.0000810623169
+AudioOutputUSB           i2s1;           //xy=1358.0000648498535,363.0000810623169
 AudioConnection          patchCord1(sine1, pwm1);//
 AudioConnection          patchCord2(sine1, sine_fm1);//
 AudioConnection          patchCord3(sine_fm1, 0, mixer3, 3);//
@@ -88,6 +88,7 @@ float mapf(float x, float in_min, float in_max, float out_min, float out_max)
 
 void setup() {
 Serial.begin(9600);
+Serial.print("some stuff to prove im working");
 
 // Get the board ready
   AudioMemory(200);
@@ -167,6 +168,7 @@ digitalWrite(Trig1LED, LOW);
 elapsedMillis msec = 0; //here for timing the troubleshooting loop at the bottom
 
 void loop() {  //Main loop for the run state
+  Serial.print("some stuff to prove im working");
 //========LFO=====================
 //The LFO might be working, but I can't get a good read or sample of it yet. 
 float LFOLevel;

@@ -10,7 +10,7 @@
 namespace AnnArborPercussion {
 
 TeensyStateVariableFilter::TeensyStateVariableFilter() {
-	this->filter=new AudioFilterStateVariable();
+//	this->filter=new AudioFilterStateVariable();
 }
 
 TeensyStateVariableFilter::~TeensyStateVariableFilter() {
@@ -18,13 +18,16 @@ TeensyStateVariableFilter::~TeensyStateVariableFilter() {
 }
 
 void TeensyStateVariableFilter::frequency(float freq){
-	this->filter->frequency(freq);
+	this->filter.frequency(freq);
 };
 void TeensyStateVariableFilter::resonance(float q){
-	this->filter->resonance(q);
+	this->filter.resonance(q);
 };
 void TeensyStateVariableFilter::octaveControl(float octave){
-	this->filter->octaveControl(octave);
+	this->filter.octaveControl(octave);
+};
+AudioStream* TeensyStateVariableFilter::getStream(){
+	return &this->filter;
 };
 
 } /* namespace AnnArborPercussion */

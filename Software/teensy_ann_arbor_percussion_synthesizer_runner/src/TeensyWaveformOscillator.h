@@ -9,11 +9,12 @@
 #define SRC_TEENSYWAVEFORMOSCILLATOR_H_
 
 #include <WaveformOscillatorAdapterInterface.h>
+#include <TeensyAudioStream.h>
 #include <Audio.h>
 
 namespace AnnArborPercussion {
 
-class TeensyWaveformOscillator: public WaveformOscillatorAdapterInterface {
+class TeensyWaveformOscillator: public WaveformOscillatorAdapterInterface, public TeensyAudioStream {
 public:
 	TeensyWaveformOscillator();
 	virtual ~TeensyWaveformOscillator();
@@ -25,8 +26,9 @@ public:
 	void begin(short t_type);
 	void begin(float t_amp, float t_freq, short t_type);
 	void arbitraryWaveform(const short int *data, float maxFreq);
+	AudioStream* getStream();
 private:
-	AudioSynthWaveform* waveform;
+	AudioSynthWaveform waveform;
 };
 
 } /* namespace AnnArborPercussion */
